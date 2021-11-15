@@ -10,7 +10,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>Hello Baby</h1>
+                <input type="text" placeholder="Write Todo .." />
             </div>
         );
     }
