@@ -24,15 +24,17 @@ class App extends Component {
     };
 
     render() {
+        const { setTodoText, state, handleNewTodo } = this;
+
         return (
             <div>
                 <input
                     type="text"
-                    onChange={(event) => this.setTodoText(event)}
+                    onChange={(event) => setTodoText(event)}
                     placeholder="Write Todo .."
-                    value={this.state.todo}
+                    value={state.todo}
                 />
-                <button onClick={this.handleNewTodo} className="fa fa-plus" />
+                <button onClick={handleNewTodo} className="fa fa-plus" />
             </div>
         );
     }
