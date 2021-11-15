@@ -15,7 +15,7 @@ class App extends Component {
             text: this.state.todo,
         };
         todos.push(todo);
-        this.setState({ todos });
+        this.setState({ todos, todo: "" });
     };
 
     // Fetch Todo Text
@@ -30,6 +30,7 @@ class App extends Component {
                     type="text"
                     onChange={(event) => this.setTodoText(event)}
                     placeholder="Write Todo .."
+                    value={this.state.todo}
                 />
                 <button onClick={this.handleNewTodo} className="fa fa-plus" />
             </div>
