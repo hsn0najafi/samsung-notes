@@ -7,6 +7,17 @@ class App extends Component {
         showTodos: false,
     };
 
+    // Make New Todo
+    handleNewTodo = () => {
+        const todos = [...this.state.todos];
+        const todo = {
+            id: Math.random() * 1000000,
+            text: this.state.todo,
+        };
+        todos.push(todo);
+        this.setState({ todos });
+    };
+
     // Fetch Todo Text
     setTodoText = (e) => {
         this.setState({ todo: e.target.value });
@@ -20,6 +31,7 @@ class App extends Component {
                     onChange={(event) => this.setTodoText(event)}
                     placeholder="Write Todo .."
                 />
+                <button onClick={this.handleNewTodo} className="fa fa-plus" />
             </div>
         );
     }
