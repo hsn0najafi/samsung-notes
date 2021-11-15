@@ -7,10 +7,19 @@ class App extends Component {
         showTodos: false,
     };
 
+    // Fetch Todo Text
+    setTodoText = (e) => {
+        this.setState({ todo: e.target.value });
+    };
+
     render() {
         return (
             <div>
-                <input type="text" placeholder="Write Todo .." />
+                <input
+                    type="text"
+                    onChange={(event) => this.setTodoText(event)}
+                    placeholder="Write Todo .."
+                />
             </div>
         );
     }
