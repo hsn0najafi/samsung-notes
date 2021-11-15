@@ -4,7 +4,6 @@ class App extends Component {
     state = {
         todos: [],
         todo: "",
-        showTodos: false,
     };
 
     // Make New Todo
