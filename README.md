@@ -3,8 +3,8 @@ React CRUD Operations In Todo App
 
 ## How To Run
 ```
-$ npm i
+npm i
 ```
 ```
-$ npm start
+npm start
 ```
