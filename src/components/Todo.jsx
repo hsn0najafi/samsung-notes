@@ -1,13 +1,9 @@
-const Todos = ({ todos }) => {
+const Todo = ({ text }) => {
     return (
         <div>
-            <div>
-                {todos.map((t) => (
-                    <p>{t.text}</p>
-                ))}
-            </div>
+            <div>{text}</div>
         </div>
     );
 };
 
-export default Todos;
+export default Todo;
