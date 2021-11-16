@@ -41,7 +41,12 @@ class App extends Component {
                     value={state.todo}
                 />
                 <button onClick={handleNewTodo} className="fa fa-plus" />
-                <button onClick={handleShowTodos} className="fa fa-eye" />
+                <button
+                    onClick={handleShowTodos}
+                    className={`fa ${
+                        state.showTodos ? "fa-eye-slash" : "fa-eye"
+                    }`}
+                />
                 {state.showTodos ? <Todo todos={state.todos} /> : null}
             </div>
         );
