@@ -6,6 +6,7 @@ class App extends Component {
     state = {
         todos: [],
         todo: "",
+        showTodos: false,
     };
 
     // Make New Todo
@@ -24,8 +25,12 @@ class App extends Component {
         this.setState({ todo: e.target.value });
     };
 
+    handleShowTodos = () => {
+        this.setState({ showTodos: !this.state.showTodos });
+    };
+
     render() {
-        const { setTodoText, state, handleNewTodo } = this;
+        const { setTodoText, state, handleNewTodo, handleShowTodos } = this;
 
         return (
             <div>
@@ -36,7 +41,8 @@ class App extends Component {
                     value={state.todo}
                 />
                 <button onClick={handleNewTodo} className="fa fa-plus" />
-                <Todo todos={state.todos} />
+                <button onClick={handleShowTodos} className="fa fa-eye" />
+                {state.showTodos ? <Todo todos={state.todos} /> : null}
             </div>
         );
     }
