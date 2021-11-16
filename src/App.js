@@ -1,5 +1,7 @@
 import { Component } from "react";
 
+import Todo from "./components/Todo";
+
 class App extends Component {
     state = {
         todos: [],
@@ -34,6 +36,7 @@ class App extends Component {
                     value={state.todo}
                 />
                 <button onClick={handleNewTodo} className="fa fa-plus" />
+                <Todo todos={state.todos} />
             </div>
         );
     }
