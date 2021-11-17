@@ -5,7 +5,7 @@ const Todos = ({ todos }) => {
     return (
         <Fragment>
             {todos.map((t) => (
-                <Todo text={t.text} key={t.id} />
+                <Todo text={t.text} key={t.id} subject={t.subject} />
             ))}
         </Fragment>
     );
