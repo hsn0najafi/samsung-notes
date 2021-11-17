@@ -127,7 +127,11 @@ body {
     background-color: orange;
     text-shadow: 0 0 1px rgb(129, 129, 129);
     color: #fff;
-    font-size: 19px;
+    font-size: 20px;
+}
+
+.new-todo-button:hover {
+    box-shadow: 0 0 10px rgb(133, 133, 133);
 }
 
 .editor-container {
@@ -137,7 +141,7 @@ body {
     position: fixed;
     right: -100vw;
     bottom: 0;
-    transition: 1s ease all;
+    transition: 0.25s ease all;
 }
 
 .editor-container__active {

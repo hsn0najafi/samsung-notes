@@ -4,7 +4,7 @@ const NewTodo = () => {
     return (
         <Fragment>
             <div className="editor-container"></div>
-            <button className="new-todo-button fa fa-pen"></button>
+            <button className="new-todo-button fa fa-plus"></button>
         </Fragment>
     );
 };
