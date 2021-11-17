@@ -1,7 +1,7 @@
 const Todo = ({ text }) => {
     return (
-        <div>
-            <div>{text}</div>
+        <div className="todo">
+            <p className="todo-text">{text}</p>
         </div>
     );
 };

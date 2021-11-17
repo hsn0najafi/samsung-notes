@@ -1,13 +1,64 @@
-import { Component } from "react";
+import { Component, Fragment } from "react";
 
 import NewTodo from "./components/NewTodo";
 import Todo from "./components/Todos";
 
 class App extends Component {
     state = {
-        todos: [],
+        todos: [
+            {
+                id: 0,
+                subject: "SampleSampleSampleSampleSampleSampleSample",
+                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
+            },
+            {
+                id: 0,
+                subject: "SampleSampleSampleSampleSampleSampleSample",
+                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
+            },
+            {
+                id: 0,
+                subject: "SampleSampleSampleSampleSampleSampleSample",
+                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
+            },
+            {
+                id: 0,
+                subject: "SampleSampleSampleSampleSampleSampleSample",
+                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
+            },
+            {
+                id: 0,
+                subject: "SampleSampleSampleSampleSample",
+                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
+            },
+            {
+                id: 0,
+                subject: "SampleSampleSampleSampleSample",
+                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
+            },
+            {
+                id: 0,
+                subject: "SampleSampleSampleSampleSamplSampleSamplee",
+                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
+            },
+            {
+                id: 0,
+                subject: "SampleSampleSampleSampleSampleSampleSample",
+                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
+            },
+            {
+                id: 0,
+                subject: "SampleSampleSampleSampleSample",
+                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
+            },
+            {
+                id: 0,
+                subject: "SampleSampleSampleSampleSampleSampleSample",
+                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
+            },
+        ],
         todo: "",
-        showTodos: false,
+        showTodos: true,
     };
 
     // Make New Todo
@@ -35,15 +86,17 @@ class App extends Component {
         const { setTodoText, state, handleNewTodo, handleShowTodos } = this;
 
         return (
-            <div>
-                {state.showTodos ? <Todo todos={state.todos} /> : null}
+            <Fragment>
+                <div className="todos">
+                    {state.showTodos ? <Todo todos={state.todos} /> : null}
+                </div>
                 <NewTodo
                     setTodoText={setTodoText}
                     state={state}
                     handleNewTodo={handleNewTodo}
                     handleShowTodos={handleShowTodos}
                 />
-            </div>
+            </Fragment>
         );
     }
 }
