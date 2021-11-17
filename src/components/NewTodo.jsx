@@ -1,18 +1,11 @@
-const NewTodo = ({ setTodoText, state, handleNewTodo, handleShowTodos }) => {
+import { Fragment } from "react";
+
+const NewTodo = () => {
     return (
-        <div>
-            <input
-                type="text"
-                onChange={(event) => setTodoText(event)}
-                placeholder="Write Todo .."
-                value={state.todo}
-            />
-            <button onClick={handleNewTodo} className="fa fa-plus" />
-            <button
-                onClick={handleShowTodos}
-                className={`fa ${state.showTodos ? "fa-eye-slash" : "fa-eye"}`}
-            />
-        </div>
+        <Fragment>
+            <div className="editor-container"></div>
+            <button className="new-todo-button fa fa-pen"></button>
+        </Fragment>
     );
 };
 
