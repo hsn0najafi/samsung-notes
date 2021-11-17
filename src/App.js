@@ -1,5 +1,6 @@
 import { Component } from "react";
 
+import NewTodo from "./components/NewTodo";
 import Todo from "./components/Todos";
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
         this.setState({ todo: e.target.value });
     };
 
+    // Show/Hide, Todos
     handleShowTodos = () => {
         this.setState({ showTodos: !this.state.showTodos });
     };
@@ -34,20 +36,13 @@ class App extends Component {
 
         return (
             <div>
-                <input
-                    type="text"
-                    onChange={(event) => setTodoText(event)}
-                    placeholder="Write Todo .."
-                    value={state.todo}
-                />
-                <button onClick={handleNewTodo} className="fa fa-plus" />
-                <button
-                    onClick={handleShowTodos}
-                    className={`fa ${
-                        state.showTodos ? "fa-eye-slash" : "fa-eye"
-                    }`}
-                />
                 {state.showTodos ? <Todo todos={state.todos} /> : null}
+                <NewTodo
+                    setTodoText={setTodoText}
+                    state={state}
+                    handleNewTodo={handleNewTodo}
+                    handleShowTodos={handleShowTodos}
+                />
             </div>
         );
     }
