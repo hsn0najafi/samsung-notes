@@ -58,17 +58,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    font-family: Sahel;
+    font-family: Sahel, sans-serif;
     font-weight: normal;
-
-    /* border: 1px solid red; */
 }
 
 body {
     background-color: #efefef;
     font-size: 16px;
-    overflow-x: hidden;
 }
 
 .todos {
@@ -78,7 +74,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-y: scroll;
     padding: 10px 0;
 }
 
@@ -148,6 +144,70 @@ body {
     right: 0;
 }
 
-.hideOverFlow {
-    overflow: hidden !important;
+.header-container {
+    width: 100%;
+    height: 50px;
+    border: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.popUp-catergoriSelect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 0.1px solid black;
+    transition: 0.5s ease all;
+    position: fixed;
+    top: -500px;
+    left: -500px;
+    opacity: 0;
+}
+
+.popUp-catergoriSelect__active {
+    top: 10px;
+    left: 10px;
+    opacity: 1;
+}
+
+.popUp-catergoriSelect > p {
+    padding: 2px 4px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: rgb(18, 90, 207);
+    color: white;
+    width: 90%;
+}
+
+.catName {
+    color: #fff;
+    margin-left: 1%;
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #999;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.catNameButton {
+    margin-left: 2px;
+    font-size: 18px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+
+.catNameButton:hover {
+    background-color: #fff;
+    color: #000;
 }

@@ -1,11 +1,25 @@
 const todoEditor = document.querySelector(".editor-container");
-const html = document.querySelector("*");
+const popUp = document.querySelector(".popUp-catergoriSelect");
 
-window.onclick = (e) => {
-    if (e.target.classList[0] == "new-todo-button") openEditor();
+window.onclick = ({ target: { classList } }) => {
+    if (classList[0] == "new-todo-button") openEditor();
+    if (classList[0] == "catNameButton") openCats();
+    if (
+        classList[0] != "catNameButton" &&
+        classList[0] != "popUp-catergoriSelect"
+    ) {
+        closeCats();
+    }
 };
 
 const openEditor = () => {
     todoEditor.classList.toggle("editor-container__active");
-    html.classList.toggle("hideOverFlow");
+};
+
+const openCats = () => {
+    popUp.classList.add("popUp-catergoriSelect__active");
+};
+
+const closeCats = () => {
+    popUp.classList.remove("popUp-catergoriSelect__active");
 };
