@@ -7,9 +7,8 @@ window.onclick = ({ target: { classList } }) => {
     if (
         classList[0] != "catNameButton" &&
         classList[0] != "popUp-catergoriSelect"
-    ) {
+    )
         closeCats();
-    }
 };
 
 const openEditor = () => {
