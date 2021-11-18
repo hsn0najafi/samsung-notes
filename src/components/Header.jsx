@@ -7,10 +7,13 @@ const Header = ({ state, handleShowPopUp }) => {
                 {state.currentCat}
                 <i
                     className="catNameButton fa fa-angle-down"
+                    style={{ zIndex: 100 }}
                     onClick={handleShowPopUp}
                 ></i>
             </div>
-            {state.showCatPopUp ? <PopUp state={state} /> : null}
+            {state.showCatPopUp ? (
+                <PopUp state={state} handleShowPopUp={handleShowPopUp} />
+            ) : null}
             <div className="searchBar-text"></div>
             <div className="fixed-searchBar" style={{ display: "none" }}>
                 <button className="backButton" />
