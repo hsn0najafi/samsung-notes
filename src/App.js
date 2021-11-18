@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 
 import Header from "./components/Header";
 import NewTodo from "./components/NewTodo";
-import Todo from "./components/Todos";
+import Todos from "./components/Todos";
 
 class App extends Component {
     state = {
@@ -113,7 +113,7 @@ class App extends Component {
             <Fragment>
                 <Header state={state} handleShowPopUp={handleShowPopUp} />
                 <div className="todos">
-                    {state.showTodos ? <Todo todos={state.todos} /> : null}
+                    {state.showTodos ? <Todos todos={state.todos} /> : null}
                 </div>
                 <NewTodo
                     setTodoText={setTodoText}
