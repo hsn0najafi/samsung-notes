@@ -72,6 +72,7 @@ class App extends Component {
         cats: ["Favorite", "private"],
         showTodos: true,
         currentCat: "Favorite",
+        showCatPopUp: false,
     };
 
     // Make New Todo
@@ -95,12 +96,22 @@ class App extends Component {
         this.setState({ showTodos: !this.state.showTodos });
     };
 
+    hanleShowPopUp = () => {
+        this.setState({ showCatPopUp: !this.state.showCatPopUp });
+    };
+
     render() {
-        const { setTodoText, state, handleNewTodo, handleShowTodos } = this;
+        const {
+            setTodoText,
+            state,
+            handleNewTodo,
+            handleShowTodos,
+            handleShowPopUp,
+        } = this;
 
         return (
             <Fragment>
-                <Header state={state} />
+                <Header state={state} handleShowPopUp={handleShowPopUp} />
                 <div className="todos">
                     {state.showTodos ? <Todo todos={state.todos} /> : null}
                 </div>
