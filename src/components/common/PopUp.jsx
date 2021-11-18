@@ -1,7 +1,11 @@
-const PopUp = ({ state }) => {
+const PopUp = ({ state, handleShowPopUp }) => {
     return (
         <div>
-            <div className="popUp-catergoriSelect  animate__animated animate__fadeIn">
+            {state.showCatPopUp ? (
+                <div className="popUpTop" onClick={handleShowPopUp}></div>
+            ) : null}
+
+            <div className="popUp-catergoriSelect  animate__animated animate__slideInUp animate__faster">
                 {state.cats.map((c) => (
                     <p>{c}</p>
                 ))}
