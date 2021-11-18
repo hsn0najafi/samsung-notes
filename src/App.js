@@ -96,7 +96,7 @@ class App extends Component {
         this.setState({ showTodos: !this.state.showTodos });
     };
 
-    hanleShowPopUp = () => {
+    handleShowPopUp = () => {
         this.setState({ showCatPopUp: !this.state.showCatPopUp });
     };
 
