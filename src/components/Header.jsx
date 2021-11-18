@@ -1,18 +1,16 @@
-const Header = ({ state }) => {
+import PopUp from "./common/PopUp";
+
+const Header = ({ state, handleShowPopUp }) => {
     return (
         <div className="header-container">
             <div className="catName">
                 {state.currentCat}
-                <i className="catNameButton fa fa-angle-down"></i>
+                <i
+                    className="catNameButton fa fa-angle-down"
+                    onClick={handleShowPopUp}
+                ></i>
             </div>
-            <div
-                className="popUp-catergoriSelect"
-                style={{ height: `${state.cats.length * 40}px` }}
-            >
-                {state.cats.map((c) => (
-                    <p>{c}</p>
-                ))}
-            </div>
+            {state.showCatPopUp ? <PopUp state={state} /> : null}
             <div className="searchBar-text"></div>
             <div className="fixed-searchBar" style={{ display: "none" }}>
                 <button className="backButton" />
