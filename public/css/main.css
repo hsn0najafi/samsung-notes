@@ -158,25 +158,29 @@ body {
 }
 
 .popUp-catergoriSelect {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 100%;
+    height: 35%;
     background-color: #fff;
     border-radius: 5px;
     border: 0.1px solid black;
     transition: 0.5s ease all;
-    position: fixed;
-    top: -500px;
-    left: -500px;
-    opacity: 0;
 }
 
-.popUp-catergoriSelect__active {
-    top: 10px;
-    left: 10px;
-    opacity: 1;
+.popUpTop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 65vh;
+    background-color: transparent;
 }
 
 .popUp-catergoriSelect > p {
