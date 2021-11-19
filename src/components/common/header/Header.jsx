@@ -16,14 +16,21 @@ const Header = ({ state, handleShowPopUp, handleShowSearchBar }) => {
                 <PopUp state={state} handleShowPopUp={handleShowPopUp} />
             ) : null}
 
-            <button onClick={handleShowSearchBar} className="show-searchBar">
-                SEARCH
-            </button>
             {state.showSearchBar ? (
                 <SearchBar handleShowSearchBar={handleShowSearchBar} />
             ) : null}
+            <div>
+                <button
+                    onClick={handleShowSearchBar}
+                    className="show-searchBar"
+                >
+                    SEARCH
+                </button>
 
-            <MoreOptions />
+                <button className="fa fa-ellipsis-v moreOptions-button" />
+
+                <MoreOptions />
+            </div>
         </div>
     );
 };

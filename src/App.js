@@ -78,7 +78,7 @@ class App extends Component {
         showTodos: true,
         currentCat: "Favorite",
         showCatPopUp: false,
-        showSearchBar: true,
+        showSearchBar: false,
     };
 
     // Make New Todo
