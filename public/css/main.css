@@ -187,7 +187,7 @@ body {
     background-color: transparent;
 }
 
-.popUp-catergoriSelect > p {
+.popUp-catergoriSelect > div {
     padding: 10px;
     margin: 10px 5px;
     border-radius: 5px;
@@ -222,4 +222,13 @@ body {
 .catNameButton:hover {
     background-color: #fff;
     color: #000;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
