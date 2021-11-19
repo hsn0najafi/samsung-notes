@@ -155,7 +155,7 @@ body {
     background-color: orange;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .popUp-catergoriSelect {
@@ -207,6 +207,7 @@ body {
     text-shadow: 0 0 5px #999;
     display: flex;
     align-items: center;
+    margin-right: auto;
 }
 
 .catNameButton {
