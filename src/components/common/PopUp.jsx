@@ -7,7 +7,7 @@ const PopUp = ({ state, handleShowPopUp }) => {
 
             <div className="popUp-catergoriSelect  animate__animated animate__slideInUp animate__faster">
                 {state.cats.map((c) => (
-                    <div>
+                    <div key={c.id}>
                         <p>{c.name}</p>
                         <p>{c.count}</p>
                     </div>
