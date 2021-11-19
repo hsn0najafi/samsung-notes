@@ -2,7 +2,12 @@ import PopUp from "./PopUp";
 import SearchBar from "./SearchBar";
 import MoreOptions from "./MoreOptions";
 
-const Header = ({ state, handleShowPopUp, handleShowSearchBar }) => {
+const Header = ({
+    state,
+    handleShowPopUp,
+    handleShowSearchBar,
+    handleShowMoreOptions,
+}) => {
     return (
         <div className="header-container">
             <div className="catName">
@@ -16,21 +21,20 @@ const Header = ({ state, handleShowPopUp, handleShowSearchBar }) => {
                 <PopUp state={state} handleShowPopUp={handleShowPopUp} />
             ) : null}
 
+            <button onClick={handleShowSearchBar} className="show-searchBar">
+                SEARCH
+            </button>
             {state.showSearchBar ? (
                 <SearchBar handleShowSearchBar={handleShowSearchBar} />
             ) : null}
-            <div>
-                <button
-                    onClick={handleShowSearchBar}
-                    className="show-searchBar"
-                >
-                    SEARCH
-                </button>
 
-                <button className="fa fa-ellipsis-v moreOptions-button" />
-
-                <MoreOptions />
-            </div>
+            <button
+                className="fa fa-ellipsis-v moreOptions-button"
+                onClick={handleShowMoreOptions}
+            />
+            {state.showMoreOptions ? (
+                <MoreOptions handleShowMoreOptions={handleShowMoreOptions} />
+            ) : null}
         </div>
     );
 };

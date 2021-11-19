@@ -1,4 +1,4 @@
-import { Component, Fragment } from "react";
+import { Component } from "react";
 
 import Header from "./components/common/header/Header";
 import NewTodo from "./components/NewTodo";
@@ -79,7 +79,7 @@ class App extends Component {
         currentCat: "Favorite",
         showCatPopUp: false,
         showSearchBar: false,
-        showMoreOptions: true,
+        showMoreOptions: false,
     };
 
     // Make New Todo
@@ -128,7 +128,7 @@ class App extends Component {
         } = this;
 
         return (
-            <Fragment>
+            <div className="root">
                 <Header
                     state={state}
                     handleShowPopUp={handleShowPopUp}
@@ -142,7 +142,7 @@ class App extends Component {
                     handleNewTodo={handleNewTodo}
                     handleShowTodos={handleShowTodos}
                 />
-            </Fragment>
+            </div>
         );
     }
 }
