@@ -1,6 +1,8 @@
 import PopUp from "./PopUp";
+import SearchBar from "./SearchBar";
+import MoreOptions from "./MoreOptions";
 
-const Header = ({ state, handleShowPopUp }) => {
+const Header = ({ state, handleShowPopUp, handleShowSearchBar }) => {
     return (
         <div className="header-container">
             <div className="catName">
@@ -10,21 +12,22 @@ const Header = ({ state, handleShowPopUp }) => {
                     onClick={handleShowPopUp}
                 ></i>
             </div>
+
             {state.showCatPopUp ? (
                 <PopUp state={state} handleShowPopUp={handleShowPopUp} />
             ) : null}
-            <div className="searchBar-text"></div>
-            <div className="fixed-searchBar" style={{ display: "none" }}>
-                <button className="backButton" />
-                <div>
-                    <i className="fa fa-search"></i>
-                    <input type="search" className="search" />
-                </div>
-            </div>
-            <div className="more-options">
-                <div className="popUp-moreOptions"></div>
-                <div className="manage-catergories"></div>
-            </div>
+
+            {state.showSearchBar ? (
+                <SearchBar handleShowSearchBar={handleShowSearchBar} />
+            ) : null}
+
+            <button
+                onClick={handleShowSearchBar}
+                className="show-searchBar fa fa-ellipsis-v"
+            >
+                SEARCH
+            </button>
+            <MoreOptions />
         </div>
     );
 };
