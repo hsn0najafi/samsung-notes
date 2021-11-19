@@ -79,6 +79,7 @@ class App extends Component {
         currentCat: "Favorite",
         showCatPopUp: false,
         showSearchBar: false,
+        showMoreOptions: true,
     };
 
     // Make New Todo
@@ -111,6 +112,10 @@ class App extends Component {
         this.setState({ showSearchBar: !this.state.showSearchBar });
     };
 
+    handleShowMoreOptions = () => {
+        this.setState({ showMoreOptions: !this.state.showMoreOptions });
+    };
+
     render() {
         const {
             setTodoText,
@@ -119,6 +124,7 @@ class App extends Component {
             handleShowTodos,
             handleShowPopUp,
             handleShowSearchBar,
+            handleShowMoreOptions,
         } = this;
 
         return (
@@ -127,6 +133,7 @@ class App extends Component {
                     state={state}
                     handleShowPopUp={handleShowPopUp}
                     handleShowSearchBar={handleShowSearchBar}
+                    handleShowMoreOptions={handleShowMoreOptions}
                 />
                 {state.showTodos ? <Todos todos={state.todos} /> : null}
                 <NewTodo
