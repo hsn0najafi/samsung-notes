@@ -258,4 +258,52 @@ html::-webkit-scrollbar {
     background-color: orange;
     border: 1px solid red;
     z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: ease 1s all;
+}
+
+.searchBar-backButton {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 50%;
+    margin-left: 20px;
+    transition: ease 0.5s all;
+}
+
+.searchBar-backButton:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.searchBar-input {
+    display: flex;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    align-items: center;
+    margin: 0px 20px;
+    width: 80%;
+}
+
+.searchBar-input > i {
+    font-size: 12px;
+    opacity: 0.5;
+    background-color: #fff;
+    border: none;
+    padding: 3px;
+    margin-left: 5px;
+}
+
+.searchBar-input > input {
+    border: none;
+    margin-right: 5px;
+    width: 95%;
+    padding: 7px;
+    direction: rtl;
 }

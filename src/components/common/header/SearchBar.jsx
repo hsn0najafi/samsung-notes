@@ -2,12 +2,12 @@ const SearchBar = ({ handleShowSearchBar }) => {
     return (
         <div className="fixed-searchBar">
             <button
-                className="backButton fa fa-arrow-left"
+                className="searchBar-backButton fa fa-arrow-left"
                 onClick={handleShowSearchBar}
             />
-            <div>
+            <div className="searchBar-input">
                 <i className="fa fa-search"></i>
-                <input type="search" className="search" />
+                <input type="search" placeholder="   جستجو ...   " />
             </div>
         </div>
     );
