@@ -69,7 +69,12 @@ class App extends Component {
             },
         ],
         todo: "",
-        cats: ["Favorite", "private"],
+        cats: [
+            { name: "Favorite", count: 20 },
+            { name: "Other", count: 30 },
+            { name: "Work", count: 3 },
+            { name: "Friday", count: 14 },
+        ],
         showTodos: true,
         currentCat: "Favorite",
         showCatPopUp: false,

@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 const PopUp = ({ state, handleShowPopUp }) => {
     return (
         <div>
@@ -7,7 +9,12 @@ const PopUp = ({ state, handleShowPopUp }) => {
 
             <div className="popUp-catergoriSelect  animate__animated animate__slideInUp animate__faster">
                 {state.cats.map((c) => (
-                    <p>{c}</p>
+                    <Fragment>
+                        <p>
+                            {c.name}
+                            <p className="categrori-count"> {c.count}</p>
+                        </p>
+                    </Fragment>
                 ))}
             </div>
         </div>
