@@ -101,6 +101,7 @@ class App extends Component {
         this.setState({ showTodos: !this.state.showTodos });
     };
 
+    // Show Or Hide CategoriSelector
     handleShowPopUp = () => {
         this.setState({ showCatPopUp: !this.state.showCatPopUp });
     };

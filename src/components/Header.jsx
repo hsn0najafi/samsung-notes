@@ -7,7 +7,6 @@ const Header = ({ state, handleShowPopUp }) => {
                 {state.currentCat}
                 <i
                     className="catNameButton fa fa-angle-down"
-                    style={{ zIndex: 100 }}
                     onClick={handleShowPopUp}
                 ></i>
             </div>
