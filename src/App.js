@@ -117,9 +117,7 @@ class App extends Component {
         return (
             <Fragment>
                 <Header state={state} handleShowPopUp={handleShowPopUp} />
-                <div className="todos">
-                    {state.showTodos ? <Todos todos={state.todos} /> : null}
-                </div>
+                {state.showTodos ? <Todos todos={state.todos} /> : null}
                 <NewTodo
                     setTodoText={setTodoText}
                     state={state}

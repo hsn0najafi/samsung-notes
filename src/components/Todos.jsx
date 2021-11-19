@@ -1,13 +1,12 @@
-import { Fragment } from "react";
 import Todo from "./Todo";
 
 const Todos = ({ todos }) => {
     return (
-        <Fragment>
+        <div className="todos">
             {todos.map((t) => (
                 <Todo text={t.text} key={t.id} subject={t.subject} />
             ))}
-        </Fragment>
+        </div>
     );
 };
 
