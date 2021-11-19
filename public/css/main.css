@@ -202,13 +202,11 @@ body {
 
 .catName {
     color: #fff;
-    margin-left: 1%;
-    font-size: 17px;
+    margin-left: 2.5%;
     font-weight: bold;
     text-shadow: 0 0 5px #999;
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
 
 .catNameButton {
@@ -237,17 +235,14 @@ html::-webkit-scrollbar {
 .show-searchBar {
     background-color: transparent;
     border: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
+    font-weight: bold;
     cursor: pointer;
     color: white;
     transition: 0.5s ease all;
 }
 
 .show-searchBar:hover {
-    background-color: #fff;
-    color: black;
+    text-shadow: 0 0 10px rgb(82, 82, 82);
 }
 
 .fixed-searchBar {
@@ -272,7 +267,7 @@ html::-webkit-scrollbar {
     background-color: orange;
     color: white;
     border-radius: 50%;
-    margin-left: 20px;
+    margin-left: 2.5%;
     transition: ease 0.5s all;
 }
 
@@ -289,6 +284,10 @@ html::-webkit-scrollbar {
     align-items: center;
     margin: 0px 20px;
     width: 80%;
+}
+
+.searchBar-input:hover {
+    box-shadow: 0.1px 0.1px 0.1px 5px rgba(255, 255, 255, 0.397);
 }
 
 .searchBar-input > i {
