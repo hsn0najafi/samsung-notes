@@ -1,8 +1,8 @@
 import { Component, Fragment } from "react";
 
-import Header from "./components/Header";
+import Header from "./components/common/header/Header";
 import NewTodo from "./components/NewTodo";
-import Todos from "./components/Todos";
+import Todos from "./components/common/todos/Todos";
 
 class App extends Component {
     state = {
