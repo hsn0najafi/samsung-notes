@@ -98,24 +98,35 @@ const App = () => {
     return (
         <Context.Provider
             value={{
-                state: todos,
+                todos,
+                setTodos,
+                todo,
+                setTodo,
+                cats,
+                setCats,
+                showTodos,
+                setShowTodos,
+                currentCat,
+                setCurrentCat,
+                showCatPopUp,
+                setShowCatPopUp,
+                showSearchBar,
+                setShowSearchBar,
+                showMoreOptions,
+                setShowMoreOptions,
+
+                handleNewTodo,
+                setTodoText,
+                handleShowTodos,
                 handleShowPopUp,
+                handleShowSearchBar,
+                handleShowMoreOptions,
             }}
         >
             <div className="root">
-                <Header
-                    state={state}
-                    handleShowPopUp={handleShowPopUp}
-                    handleShowSearchBar={handleShowSearchBar}
-                    handleShowMoreOptions={handleShowMoreOptions}
-                />
-                {state.showTodos ? <Todos todos={state.todos} /> : null}
-                <NewTodo
-                    setTodoText={setTodoText}
-                    state={state}
-                    handleNewTodo={handleNewTodo}
-                    handleShowTodos={handleShowTodos}
-                />
+                <Header />
+                {showTodos ? <Todos /> : null}
+                <NewTodo />
             </div>
         </Context.Provider>
     );

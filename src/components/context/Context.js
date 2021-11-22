@@ -1,8 +1,5 @@
 import { createContext } from "react";
 
-const Context = createContext({
-    todos: [],
-    handleShowPopUp: () => {},
-});
+const Context = createContext({});
 
 export default Context;
