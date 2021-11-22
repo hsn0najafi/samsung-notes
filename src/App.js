@@ -52,7 +52,7 @@ const App = () => {
         showCatPopUp: false,
     });
 
-    const [showSearchBar, setshowSearchBar] = useState({
+    const [showSearchBar, setShowSearchBar] = useState({
         showSearchBar: false,
     });
 
@@ -62,53 +62,44 @@ const App = () => {
 
     // Make New Todo
     const handleNewTodo = () => {
-        const todos = [...this.state.todos];
-        const todo = {
+        const todos = [...todos];
+        const myTodo = {
             id: Math.random() * 1000000,
-            text: this.state.todo,
+            text: todo,
         };
-        todos.push(todo);
-        this.setState({ todos, todo: "" });
+        todos.push(myTodo);
+        setTodos({ todos });
+        setTodo({ todo: "" });
     };
 
     // Fetch Todo Text
     const setTodoText = (e) => {
-        this.setState({ todo: e.target.value });
+        setTodo({ todo: e.target.value });
     };
 
     // Show/Hide, Todos
     const handleShowTodos = () => {
-        this.setState({ showTodos: !this.state.showTodos });
+        setShowTodos({ showTodos: !showTodos });
     };
 
     // Show Or Hide CategoriSelector
     const handleShowPopUp = () => {
-        this.setState({ showCatPopUp: !this.state.showCatPopUp });
+        setShowCatPopUp({ showCatPopUp: !showCatPopUp });
     };
 
     const handleShowSearchBar = () => {
-        this.setState({ showSearchBar: !this.state.showSearchBar });
+        setShowSearchBar({ showSearchBar: !showSearchBar });
     };
 
     const handleShowMoreOptions = () => {
-        this.setState({ showMoreOptions: !this.state.showMoreOptions });
+        setShowMoreOptions({ showMoreOptions: !showMoreOptions });
     };
-
-    const {
-        setTodoText,
-        state,
-        handleNewTodo,
-        handleShowTodos,
-        handleShowPopUp,
-        handleShowSearchBar,
-        handleShowMoreOptions,
-    } = this;
 
     return (
         <Context.Provider
             value={{
-                state: this.state,
-                handleShowPopUp: this.handleShowPopUp,
+                state: todos,
+                handleShowPopUp,
             }}
         >
             <div className="root">
