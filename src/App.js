@@ -83,6 +83,9 @@ class App extends Component {
         showMoreOptions: false,
     };
 
+    static contextType = Context;
+    // this.context
+
     // Make New Todo
     handleNewTodo = () => {
         const todos = [...this.state.todos];
