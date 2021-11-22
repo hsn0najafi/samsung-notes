@@ -1,12 +1,12 @@
-import { Component } from "react";
+import { useState } from "react";
 
 import Header from "./components/common/header/Header";
 import NewTodo from "./components/common/newTodo/NewTodo";
 import Todos from "./components/common/todos/Todos";
 import Context from "./components/context/Context";
 
-class App extends Component {
-    state = {
+const App = () => {
+    const [todos, setTodos] = useState({
         todos: [
             {
                 id: 0,
@@ -26,68 +26,42 @@ class App extends Component {
                 text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
                 catName: "favorite",
             },
-            {
-                id: 3,
-                subject: "SampleSampleSampleSampleSampleSampleSample",
-                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
-                catName: "private",
-            },
-            {
-                id: 4,
-                subject: "SampleSampleSampleSampleSample",
-                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-                catName: "favorite",
-            },
-            {
-                id: 5,
-                subject: "SampleSampleSampleSampleSample",
-                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
-                catName: "private",
-            },
-            {
-                id: 6,
-                subject: "SampleSampleSampleSampleSamplSampleSamplee",
-                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-                catName: "favorite",
-            },
-            {
-                id: 7,
-                subject: "SampleSampleSampleSampleSampleSampleSample",
-                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
-                catName: "private",
-            },
-            {
-                id: 8,
-                subject: "SampleSampleSampleSampleSample",
-                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-                catName: "favorite",
-            },
-            {
-                id: 9,
-                subject: "SampleSampleSampleSampleSampleSampleSample",
-                text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
-                catName: "favorite",
-            },
         ],
-        todo: "",
+    });
+
+    const [todo, setTodo] = useState({ todo: "" });
+
+    const [cats, setCats] = useState({
         cats: [
             { id: 0, name: "Favorite", count: 20 },
             { id: 1, name: "Other", count: 30 },
             { id: 2, name: "Work", count: 3 },
             { id: 3, name: "Friday", count: 14 },
         ],
-        showTodos: true,
-        currentCat: "Favorite",
-        showCatPopUp: false,
-        showSearchBar: false,
-        showMoreOptions: false,
-    };
+    });
 
-    static contextType = Context;
-    // this.context
+    const [showTodos, setShowTodos] = useState({
+        showTodos: true,
+    });
+
+    const [currentCat, setCurrentCat] = useState({
+        currentCat: "Favorite",
+    });
+
+    const [showCatPopUp, setShowCatPopUp] = useState({
+        showCatPopUp: false,
+    });
+
+    const [showSearchBar, setshowSearchBar] = useState({
+        showSearchBar: false,
+    });
+
+    const [showMoreOptions, setShowMoreOptions] = useState({
+        showMoreOptions: false,
+    });
 
     // Make New Todo
-    handleNewTodo = () => {
+    const handleNewTodo = () => {
         const todos = [...this.state.todos];
         const todo = {
             id: Math.random() * 1000000,
@@ -98,64 +72,62 @@ class App extends Component {
     };
 
     // Fetch Todo Text
-    setTodoText = (e) => {
+    const setTodoText = (e) => {
         this.setState({ todo: e.target.value });
     };
 
     // Show/Hide, Todos
-    handleShowTodos = () => {
+    const handleShowTodos = () => {
         this.setState({ showTodos: !this.state.showTodos });
     };
 
     // Show Or Hide CategoriSelector
-    handleShowPopUp = () => {
+    const handleShowPopUp = () => {
         this.setState({ showCatPopUp: !this.state.showCatPopUp });
     };
 
-    handleShowSearchBar = () => {
+    const handleShowSearchBar = () => {
         this.setState({ showSearchBar: !this.state.showSearchBar });
     };
 
-    handleShowMoreOptions = () => {
+    const handleShowMoreOptions = () => {
         this.setState({ showMoreOptions: !this.state.showMoreOptions });
     };
 
-    render() {
-        const {
-            setTodoText,
-            state,
-            handleNewTodo,
-            handleShowTodos,
-            handleShowPopUp,
-            handleShowSearchBar,
-            handleShowMoreOptions,
-        } = this;
+    const {
+        setTodoText,
+        state,
+        handleNewTodo,
+        handleShowTodos,
+        handleShowPopUp,
+        handleShowSearchBar,
+        handleShowMoreOptions,
+    } = this;
 
-        return (
-            <Context.Provider
-                value={{
-                    state: this.state,
-                    handleShowPopUp: this.handleShowPopUp,
-                }}
-            >
-                <div className="root">
-                    <Header
-                        state={state}
-                        handleShowPopUp={handleShowPopUp}
-                        handleShowSearchBar={handleShowSearchBar}
-                        handleShowMoreOptions={handleShowMoreOptions}
-                    />
-                    {state.showTodos ? <Todos todos={state.todos} /> : null}
-                    <NewTodo
-                        setTodoText={setTodoText}
-                        state={state}
-                        handleNewTodo={handleNewTodo}
-                        handleShowTodos={handleShowTodos}
-                    />
-                </div>
-            </Context.Provider>
-        );
-    }
-}
+    return (
+        <Context.Provider
+            value={{
+                state: this.state,
+                handleShowPopUp: this.handleShowPopUp,
+            }}
+        >
+            <div className="root">
+                <Header
+                    state={state}
+                    handleShowPopUp={handleShowPopUp}
+                    handleShowSearchBar={handleShowSearchBar}
+                    handleShowMoreOptions={handleShowMoreOptions}
+                />
+                {state.showTodos ? <Todos todos={state.todos} /> : null}
+                <NewTodo
+                    setTodoText={setTodoText}
+                    state={state}
+                    handleNewTodo={handleNewTodo}
+                    handleShowTodos={handleShowTodos}
+                />
+            </div>
+        </Context.Provider>
+    );
+};
 
 export default App;
