@@ -3,6 +3,7 @@ import { Component } from "react";
 import Header from "./components/common/header/Header";
 import NewTodo from "./components/common/newTodo/NewTodo";
 import Todos from "./components/common/todos/Todos";
+import Context from "./components/context/Context";
 
 class App extends Component {
     state = {
@@ -128,21 +129,28 @@ class App extends Component {
         } = this;
 
         return (
-            <div className="root">
-                <Header
-                    state={state}
-                    handleShowPopUp={handleShowPopUp}
-                    handleShowSearchBar={handleShowSearchBar}
-                    handleShowMoreOptions={handleShowMoreOptions}
-                />
-                {state.showTodos ? <Todos todos={state.todos} /> : null}
-                <NewTodo
-                    setTodoText={setTodoText}
-                    state={state}
-                    handleNewTodo={handleNewTodo}
-                    handleShowTodos={handleShowTodos}
-                />
-            </div>
+            <Context.Provider
+                value={{
+                    state: this.state,
+                    handleShowPopUp: this.handleShowPopUp,
+                }}
+            >
+                <div className="root">
+                    <Header
+                        state={state}
+                        handleShowPopUp={handleShowPopUp}
+                        handleShowSearchBar={handleShowSearchBar}
+                        handleShowMoreOptions={handleShowMoreOptions}
+                    />
+                    {state.showTodos ? <Todos todos={state.todos} /> : null}
+                    <NewTodo
+                        setTodoText={setTodoText}
+                        state={state}
+                        handleNewTodo={handleNewTodo}
+                        handleShowTodos={handleShowTodos}
+                    />
+                </div>
+            </Context.Provider>
         );
     }
 }
