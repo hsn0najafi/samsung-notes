@@ -1,15 +1,24 @@
-const PopUp = ({ state, handleShowPopUp }) => {
+import { useContext } from "react";
+
+import Context from "../../context/Context";
+
+const PopUp = () => {
+    const c = useContext(Context);
+
     return (
         <div>
-            {state.showCatPopUp ? (
-                <div className="popUpTop" onClick={handleShowPopUp}></div>
+            {c.showCatPopUp ? (
+                <div
+                    className="popUpTop"
+                    onClick={c.handleSetShowCatPopUp}
+                ></div>
             ) : null}
 
             <div className="popUp-catergoriSelect  animate__animated animate__slideInUp animate__faster">
-                {state.cats.map((c) => (
-                    <div key={c.id}>
-                        <p>{c.name}</p>
-                        <p>{c.count}</p>
+                {c.cats.map((cat) => (
+                    <div>
+                        <p>{cat.name}</p>
+                        <p>{cat.count}</p>
                     </div>
                 ))}
             </div>

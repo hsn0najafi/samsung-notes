@@ -1,9 +1,15 @@
+import { useContext } from "react";
+
+import Context from "../../context/Context";
+
 import Todo from "./Todo";
 
-const Todos = ({ todos }) => {
+const Todos = () => {
+    const c = useContext(Context);
+
     return (
         <div className="todos">
-            {todos.map((t) => (
+            {c.todos.map((t) => (
                 <Todo text={t.text} key={t.id} subject={t.subject} />
             ))}
         </div>

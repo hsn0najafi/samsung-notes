@@ -1,6 +1,10 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 
-const MoreOptions = ({ handleShowMoreOptions }) => {
+import Context from "../../context/Context";
+
+const MoreOptions = () => {
+    const c = useContext(Context);
+
     return (
         <Fragment>
             <div className="more-options animate__animated animate__fadeIn animate__faster">
@@ -9,7 +13,7 @@ const MoreOptions = ({ handleShowMoreOptions }) => {
             </div>
             <div
                 className="close-categoriSelect"
-                onClick={handleShowMoreOptions}
+                onClick={c.handleSetShowMoreOptions}
             ></div>
         </Fragment>
     );
