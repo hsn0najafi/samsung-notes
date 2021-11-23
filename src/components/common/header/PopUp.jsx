@@ -16,7 +16,7 @@ const PopUp = () => {
 
             <div className="popUp-catergoriSelect  animate__animated animate__slideInUp animate__faster">
                 {c.cats.map((cat) => (
-                    <div>
+                    <div key={cat.id}>
                         <p>{cat.name}</p>
                         <p>{cat.count}</p>
                     </div>
