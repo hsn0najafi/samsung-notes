@@ -206,6 +206,8 @@ body {
     margin-left: 2.5%;
     font-weight: bold;
     text-shadow: 0 0 5px #999;
+    background-color: orange;
+    border: none;
     display: flex;
     align-items: center;
     margin-right: auto;

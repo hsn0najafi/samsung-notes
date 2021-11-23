@@ -10,25 +10,25 @@ const Header = () => {
 
     return (
         <div className="header-container">
-            <div className="catName">
+            <button className="catName">
                 {c.currentCat}
                 <i
                     className="catNameButton fa fa-angle-down"
                     onClick={c.handleSetShowCatPopUp}
                 ></i>
-            </div>
+            </button>
             {c.showCatPopUp ? <PopUp /> : null}
 
             <button
-                onClick={c.handleSetShowSearchBar}
                 className="show-searchBar"
+                onClick={c.handleSetShowSearchBar}
             >
                 SEARCH
             </button>
             {c.showSearchBar ? <SearchBar /> : null}
 
             <button
-                className="fa fa-ellipsis-v moreOptions-button"
+                className="moreOptions-button fa fa-ellipsis-v"
                 onClick={c.handleSetShowMoreOptions}
             />
             {c.showMoreOptions ? <MoreOptions /> : null}
