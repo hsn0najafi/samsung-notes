@@ -7,18 +7,18 @@ const PopUp = () => {
 
     return (
         <div>
-            {c.showCatPopUp ? (
+            {c.showCategoriPopUp ? (
                 <div
                     className="popUpTop"
-                    onClick={c.handleSetShowCatPopUp}
+                    onClick={c.handleSetShowCategoriPopUp}
                 ></div>
             ) : null}
 
             <div className="popUp-catergoriSelect  animate__animated animate__slideInUp animate__faster">
-                {c.cats.map((cat) => (
-                    <div key={cat.id}>
-                        <p>{cat.name}</p>
-                        <p>{cat.count}</p>
+                {c.categories.map((categori) => (
+                    <div key={categori.id}>
+                        <p>{categori.name}</p>
+                        <p>{categori.count}</p>
                     </div>
                 ))}
             </div>

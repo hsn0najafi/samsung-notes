@@ -12,7 +12,7 @@ const NewTodo = () => {
             <Editor />
             <button
                 className="new-todo-button fa fa-plus animate__animated  animate__backInRight"
-                style={{ right: `${c.showCatPopUp ? "-50px" : ""} ` }}
+                style={{ right: `${c.showCategoriPopUp ? "-50px" : ""} ` }}
             ></button>
         </Fragment>
     );

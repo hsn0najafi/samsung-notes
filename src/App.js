@@ -12,31 +12,31 @@ const App = () => {
             id: 0,
             subject: "SampleSampleSampleSampleSampleSampleSample",
             text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-            catName: "favorite",
+            categoriName: "favorite",
         },
         {
             id: 1,
             subject: "SampleSampleSampleSampleSampleSampleSample",
             text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
-            catName: "private",
+            categoriName: "private",
         },
         {
             id: 2,
             subject: "SampleSampleSampleSampleSampleSampleSample",
             text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-            catName: "favorite",
+            categoriName: "favorite",
         },
     ]);
     const [todo, setTodo] = useState("");
-    const [cats, setCats] = useState([
+    const [categories, setCategories] = useState([
         { id: 0, name: "Favorite", count: 20 },
         { id: 1, name: "Other", count: 30 },
         { id: 2, name: "Work", count: 3 },
         { id: 3, name: "Friday", count: 14 },
     ]);
     const [showTodos, setShowTodos] = useState(true);
-    const [currentCat, setCurrentCat] = useState("Favorite");
-    const [showCatPopUp, setShowCatPopUp] = useState(false);
+    const [currentCategori, setCurrentCategori] = useState("Favorite");
+    const [showCategoriPopUp, setShowCategoriPopUp] = useState(false);
     const [showSearchBar, setShowSearchBar] = useState(false);
     const [showMoreOptions, setShowMoreOptions] = useState(false);
 
@@ -57,8 +57,8 @@ const App = () => {
         setShowTodos(!showTodos);
     };
 
-    const handleSetShowCatPopUp = () => {
-        setShowCatPopUp(!showCatPopUp);
+    const handleSetShowCategoriPopUp = () => {
+        setShowCategoriPopUp(!showCategoriPopUp);
     };
 
     const handleSetShowSearchBar = () => {
@@ -78,14 +78,14 @@ const App = () => {
                 setTodos,
                 todo,
                 setTodo,
-                cats,
-                setCats,
+                categories,
+                setCategories,
                 showTodos,
                 setShowTodos,
-                currentCat,
-                setCurrentCat,
-                showCatPopUp,
-                setShowCatPopUp,
+                currentCategori,
+                setCurrentCategori,
+                showCategoriPopUp,
+                setShowCategoriPopUp,
                 showSearchBar,
                 setShowSearchBar,
                 showMoreOptions,
@@ -93,7 +93,7 @@ const App = () => {
 
                 handleNewTodo,
                 handleSetShowTodos,
-                handleSetShowCatPopUp,
+                handleSetShowCategoriPopUp,
                 handleSetShowSearchBar,
                 handleSetShowMoreOptions,
             }}

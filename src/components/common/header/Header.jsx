@@ -11,13 +11,13 @@ const Header = () => {
     return (
         <div className="header-container">
             <button className="catName">
-                {c.currentCat}
+                {c.currentCategori}
                 <i
                     className="catNameButton fa fa-angle-down"
-                    onClick={c.handleSetShowCatPopUp}
+                    onClick={c.handleSetShowCategoriPopUp}
                 ></i>
             </button>
-            {c.showCatPopUp ? <PopUp /> : null}
+            {c.showCategoriPopUp ? <PopUp /> : null}
 
             <button
                 className="show-searchBar"
