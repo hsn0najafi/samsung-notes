@@ -6,7 +6,7 @@ const SearchBar = () => {
     const c = useContext(Context);
 
     return (
-        <div className="fixed-searchBar">
+        <form onSubmit={(e) => e.preventDefault()} className="fixed-searchBar">
             <button
                 className="searchBar-backButton fa fa-arrow-left"
                 onClick={c.handleSetShowSearchBar}
@@ -15,7 +15,7 @@ const SearchBar = () => {
                 <i className="fa fa-search"></i>
                 <input type="search" placeholder="   جستجو ...   " />
             </div>
-        </div>
+        </form>
     );
 };
 
