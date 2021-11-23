@@ -4,7 +4,7 @@ import Header from "./components/common/header/Header";
 import NewTodo from "./components/common/newTodo/NewTodo";
 import Todos from "./components/common/todos/Todos";
 import Context from "./components/context/Context";
-import HOC from './components/HOC/HOC';
+import HOC from "./components/HOC/HOC";
 
 const App = () => {
     // ---------------------------------
