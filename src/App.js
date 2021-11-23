@@ -4,6 +4,7 @@ import Header from "./components/common/header/Header";
 import NewTodo from "./components/common/newTodo/NewTodo";
 import Todos from "./components/common/todos/Todos";
 import Context from "./components/context/Context";
+import HOC from './components/HOC/HOC';
 
 const App = () => {
     // ---------------------------------
@@ -98,11 +99,11 @@ const App = () => {
                 handleSetShowMoreOptions,
             }}
         >
-            <div className="root">
+            <HOC>
                 <Header />
                 {showTodos ? <Todos /> : null}
                 <NewTodo />
-            </div>
+            </HOC>
         </Context.Provider>
     );
 };
