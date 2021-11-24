@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { v4 as uuidv4 } from "uuid";
+
 import Header from "./components/common/header/Header";
 import NewTodo from "./components/common/newTodo/NewTodo";
 import Todos from "./components/common/todos/Todos";
@@ -46,7 +48,7 @@ const App = () => {
     const handleNewTodo = () => {
         const myTodos = [...todos];
         const myTodo = {
-            id: Math.random() * 1000000,
+            id: uuidv4.v4(),
             text: todo,
         };
         myTodos.push(myTodo);
