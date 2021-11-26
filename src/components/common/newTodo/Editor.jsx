@@ -1,7 +1,7 @@
 const Editor = () => {
     return (
-        <div>
-            <div className="editor-container"></div>
+        <div className="editor-container animate__animated animate__slideInRight animate__faster">
+            <div></div>
         </div>
     );
 };

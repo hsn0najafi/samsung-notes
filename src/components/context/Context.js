@@ -17,12 +17,14 @@ const Context = createContext({
     setShowSearchBar: () => {},
     showMoreOptions: Boolean,
     setShowMoreOptions: () => {},
+    showEditorContainer: Boolean,
 
     handleNewTodo: () => {},
     handleSetShowTodos: () => {},
     handleSetShowCategoriPopUp: () => {},
     handleSetShowSearchBar: () => {},
     handleSetShowMoreOptions: () => {},
+    handleSetShowEditorContainer: () => {},
 });
 
 export default Context;

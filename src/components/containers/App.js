@@ -42,6 +42,7 @@ const App = () => {
     const [showCategoriPopUp, setShowCategoriPopUp] = useState(false);
     const [showSearchBar, setShowSearchBar] = useState(false);
     const [showMoreOptions, setShowMoreOptions] = useState(false);
+    const [showEditorContainer, setShowEditorContainer] = useState(false);
 
     // -----------------------------------------------------------
 
@@ -72,6 +73,10 @@ const App = () => {
         setShowMoreOptions(!showMoreOptions);
     };
 
+    const handleSetShowEditorContainer = () => {
+        setShowEditorContainer(!showEditorContainer);
+    };
+
     // -----------------------------------------
 
     return (
@@ -93,12 +98,14 @@ const App = () => {
                 setShowSearchBar,
                 showMoreOptions,
                 setShowMoreOptions,
+                showEditorContainer,
 
                 handleNewTodo,
                 handleSetShowTodos,
                 handleSetShowCategoriPopUp,
                 handleSetShowSearchBar,
                 handleSetShowMoreOptions,
+                handleSetShowEditorContainer,
             }}
         >
             <MyFragment>

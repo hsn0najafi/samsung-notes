@@ -137,13 +137,9 @@ body {
     height: 100vh;
     background-color: rgb(248, 255, 185);
     position: fixed;
-    right: -100vw;
+    right: 0;
     bottom: 0;
     transition: 0.25s ease all;
-}
-
-.editor-container__active {
-    right: 0;
 }
 
 .header-container {
