@@ -64,6 +64,7 @@ const GlobalState = ({ children }) => {
         },
     ]);
     const [todo, setTodo] = useState("");
+    const [subject, setSubject] = useState("");
     const [categories, setCategories] = useState([
         { id: 0, name: "Favorite", count: 20 },
         { id: 1, name: "Other", count: 30 },
@@ -83,10 +84,12 @@ const GlobalState = ({ children }) => {
         const myTodos = [...todos];
         const myTodo = {
             id: uuidv4(),
+            subject,
             text: todo,
         };
         myTodos.push(myTodo);
         setTodos(myTodos);
+        setSubject("");
         setTodo("");
     };
 
@@ -132,6 +135,8 @@ const GlobalState = ({ children }) => {
                 showMoreOptions,
                 setShowMoreOptions,
                 showEditorContainer,
+                subject,
+                setSubject,
 
                 handleNewTodo,
                 handleSetShowTodos,

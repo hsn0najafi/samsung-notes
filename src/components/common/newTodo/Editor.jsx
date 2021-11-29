@@ -14,7 +14,10 @@ const Editor = () => {
                     </button>
                 </div>
                 <div className="editor-todo-title">
-                    <input type="text" />
+                    <input
+                        type="text"
+                        onChange={(e) => c.setSubject(e.target.value)}
+                    />
                 </div>
                 <div className="editor-todo-text">
                     <textarea onChange={(e) => c.setTodo(e.target.value)} />

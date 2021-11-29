@@ -18,6 +18,8 @@ const Context = createContext({
     showMoreOptions: Boolean,
     setShowMoreOptions: () => {},
     showEditorContainer: Boolean,
+    subject: "",
+    setSubject: "",
 
     handleNewTodo: () => {},
     handleSetShowTodos: () => {},
