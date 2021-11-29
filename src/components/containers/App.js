@@ -4,18 +4,17 @@ import About from "../common/about/About";
 import Header from "../common/header/Header";
 import NewTodo from "../common/newTodo/NewTodo";
 import Todos from "../common/todos/Todos";
-import MyFragment from "../hoc/MyFragment";
 
 const App = () => {
     return (
-        <MyFragment>
+        <div className="app-root">
             <Header />
             <Switch>
-                <Route path="/about" exact component={About} />
-                <Route path="/" exact component={Todos} />
+                <Route path="/about" exact render={() => <About />} />
+                <Route path="/" exact render={() => <Todos />} />
             </Switch>
             <NewTodo />
-        </MyFragment>
+        </div>
     );
 };
 

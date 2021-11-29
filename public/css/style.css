@@ -1,10 +1,16 @@
 .todos {
     width: 100%;
     height: var(--todos-container-height);
-    margin-top: 50px;
-    margin-bottom: 57px;
     overflow: hidden;
-    padding: 10px 0;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    overflow-y: scroll;
+
+    width: var(--todos-container-width);
+    margin-left: auto;
+    margin-top: 0px;
+    height: 100%;
+    box-shadow: inset 0.1px 0.1px 10px #ccc;
 }
 
 .todo {
@@ -14,12 +20,16 @@
     background-color: #fff;
     box-shadow: 0 0 5px #888;
     padding: 0px 15px;
-    margin: 5px;
     border-radius: 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    margin: var(--todos-margin) !important;
+}
+
+.todo:hover {
+    box-shadow: 0.5px 0.5px 10px rgb(0, 0, 0);
 }
 
 .todo-subject {
@@ -32,7 +42,7 @@
     margin-top: 5px;
     font-size: 0.9rem;
     overflow-wrap: break-word;
-    height: 2.85rem;
+    height: 3.5rem;
     overflow: hidden;
 }
 
@@ -50,6 +60,8 @@
     text-shadow: 0 0 1px rgb(129, 129, 129);
     color: #fff;
     font-size: 20px;
+
+    right: calc(var(--popUps-right) + 20px);
 }
 
 .new-todo-button:hover {
@@ -67,12 +79,13 @@
 }
 
 .header-container {
-    width: 100%;
+    width: var(--todos-container-width);
+    position: relative;
     height: var(--header-height);
     border: none;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     background-color: orange;
     display: flex;
     align-items: center;
@@ -92,6 +105,8 @@
     border: 0.1px solid black;
     transition: 0.5s ease all;
     z-index: 300;
+
+    width: var(--todos-container-width);
 }
 
 .popUpTop {
@@ -164,6 +179,7 @@
 .fixed-searchBar {
     position: fixed;
     width: 100%;
+    position: absolute;
     height: 50px;
     top: 0;
     background-color: orange;
@@ -248,6 +264,8 @@
     z-index: 200;
     background-color: #fff;
     box-shadow: 0.25px 0.25px 10px rgba(0, 0, 0, 0.651);
+
+    right: calc(var(--popUps-right) + 10px);
 }
 
 .more-options > * {
@@ -278,4 +296,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: var(--todos-container-width);
+    margin-left: auto;
+    border: 1px solid red;
+}
+
+.app-root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
 }

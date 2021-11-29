@@ -11,7 +11,7 @@ const Todos = () => {
     return (
         <MyFragment>
             {c.showTodos ? (
-                <div className="todos flex-center-col">
+                <div className="todos">
                     {c.todos.map((t) => (
                         <Todo text={t.text} key={t.id} subject={t.subject} />
                     ))}

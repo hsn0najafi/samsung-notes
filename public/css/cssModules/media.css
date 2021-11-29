@@ -5,6 +5,11 @@
 }
 
 @media (min-width: 992px) {
+    :root {
+        --todos-container-width: 50%;
+        --todos-margin: 5px auto;
+        --popUps-right: 50%;
+    }
 }
 
 @media (min-width: 1200px) {

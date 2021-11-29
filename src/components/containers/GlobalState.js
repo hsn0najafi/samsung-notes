@@ -26,6 +26,42 @@ const GlobalState = ({ children }) => {
             text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
             categoriName: "favorite",
         },
+        {
+            id: 4,
+            subject: "SampleSampleSampleSampleSampleSampleSample",
+            text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
+            categoriName: "favorite",
+        },
+        {
+            id: 5,
+            subject: "SampleSampleSampleSampleSampleSampleSample",
+            text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
+            categoriName: "private",
+        },
+        {
+            id: 6,
+            subject: "SampleSampleSampleSampleSampleSampleSample",
+            text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
+            categoriName: "favorite",
+        },
+        {
+            id: 7,
+            subject: "SampleSampleSampleSampleSampleSampleSample",
+            text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
+            categoriName: "favorite",
+        },
+        {
+            id: 8,
+            subject: "SampleSampleSampleSampleSampleSampleSample",
+            text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
+            categoriName: "private",
+        },
+        {
+            id: 9,
+            subject: "SampleSampleSampleSampleSampleSampleSample",
+            text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
+            categoriName: "favorite",
+        },
     ]);
     const [todo, setTodo] = useState("");
     const [categories, setCategories] = useState([
