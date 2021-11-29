@@ -82,7 +82,7 @@ const GlobalState = ({ children }) => {
     const handleNewTodo = () => {
         const myTodos = [...todos];
         const myTodo = {
-            id: uuidv4.v4(),
+            id: uuidv4(),
             text: todo,
         };
         myTodos.push(myTodo);
