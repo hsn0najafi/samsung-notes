@@ -12,7 +12,7 @@ const NewTodo = () => {
             {c.showEditorContainer ? <Editor /> : null}
 
             <button
-                className="new-todo-button fa fa-plus animate__animated  animate__backInRight"
+                className="new-todo-button flex-center-row fa fa-plus animate__animated  animate__backInRight"
                 style={{ right: `${c.showCategoriPopUp ? "-50px" : ""} ` }}
                 onClick={c.handleSetShowEditorContainer}
             ></button>
