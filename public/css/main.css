@@ -60,6 +60,11 @@
     box-sizing: border-box;
     font-family: Sahel, sans-serif;
     font-weight: normal;
+    text-decoration: none;
+}
+
+p {
+    text-decoration: none;
 }
 
 body {
@@ -207,6 +212,14 @@ body {
     display: flex;
     align-items: center;
     margin-right: auto;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.catName > * {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
 }
 
 .catNameButton {
@@ -335,7 +348,7 @@ html::-webkit-scrollbar {
     box-shadow: 0.25px 0.25px 10px rgba(0, 0, 0, 0.651);
 }
 
-.more-options > div {
+.more-options > * {
     padding: 5px;
     margin: 5px;
     color: rgb(0, 0, 0);
@@ -343,9 +356,11 @@ html::-webkit-scrollbar {
     border-radius: 5px;
     cursor: pointer;
     box-shadow: inset 0 0 8px #000;
+    display: block;
+    text-decoration: none;
 }
 
-.more-options > div:hover {
+.more-options > *:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.774);
 }
 

@@ -4,19 +4,20 @@ import PopUp from "./PopUp";
 import SearchBar from "./SearchBar";
 import MoreOptions from "./MoreOptions";
 import Context from "../../context/Context";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const c = useContext(Context);
 
     return (
         <div className="header-container">
-            <button className="catName">
-                {c.currentCategori}
+            <div className="catName">
+                <Link to="/">{c.currentCategori}</Link>
                 <i
                     className="catNameButton fa fa-angle-down"
                     onClick={c.handleSetShowCategoriPopUp}
                 ></i>
-            </button>
+            </div>
             {c.showCategoriPopUp ? <PopUp /> : null}
 
             <button
