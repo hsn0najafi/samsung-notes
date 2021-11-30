@@ -83,6 +83,7 @@ const GlobalState = ({ children }) => {
     const handleNewTodo = () => {
         const Todo = {
             id: uuidv4(),
+            categoriName: currentCategori,
             subject,
             text: todo,
         };
