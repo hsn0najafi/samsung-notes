@@ -76,21 +76,27 @@ const GlobalState = ({ children }) => {
     const [showCategoriPopUp, setShowCategoriPopUp] = useState(false);
     const [showSearchBar, setShowSearchBar] = useState(false);
     const [showMoreOptions, setShowMoreOptions] = useState(false);
-    const [showEditorContainer, setShowEditorContainer] = useState(true);
+    const [showEditorContainer, setShowEditorContainer] = useState(false);
 
     // -------------------------------------------------------------------
 
     const handleNewTodo = () => {
-        const myTodos = [...todos];
-        const myTodo = {
+        const Todo = {
             id: uuidv4(),
             subject,
             text: todo,
         };
-        myTodos.push(myTodo);
-        setTodos(myTodos);
+
+        // Push New Todo Before Another Todos
+        let Todos = [Todo, ...todos];
+        setTodos(Todos);
+
+        // Empty Editor Inputs
         setSubject("");
         setTodo("");
+
+        // Close From Editor After Add
+        setShowEditorContainer(!showEditorContainer);
     };
 
     const handleSetShowTodos = () => {
