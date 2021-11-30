@@ -11,7 +11,9 @@ const MoreOptions = () => {
             <div className="more-options animate__animated animate__fadeIn animate__faster">
                 <div className="edit-todos">Edit</div>
                 <div className="manage-catergories">Manage Categories</div>
-                <Link to="/about">About</Link>
+                <Link to="/about">
+                    <span onClick={c.handleSetShowMoreOptions}>About</span>
+                </Link>
             </div>
             <div
                 className="close-categoriSelect"

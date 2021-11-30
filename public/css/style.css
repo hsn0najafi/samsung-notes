@@ -26,6 +26,7 @@
     justify-content: center;
     overflow: hidden;
     margin: var(--todos-margin) !important;
+    transition: 0.15s ease all;
 }
 
 .todo:hover {
@@ -69,11 +70,11 @@
 }
 
 .editor-container {
-    width: 100vw;
+    width: var(--todos-container-width);
     height: 100vh;
     background-color: rgb(248, 255, 185);
     position: fixed;
-    right: 0;
+    right: var(--popUps-right);
     bottom: 0;
     transition: 0.25s ease all;
 }
