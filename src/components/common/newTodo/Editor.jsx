@@ -18,12 +18,14 @@ const Editor = () => {
                         value={c.subject}
                         type="text"
                         onChange={(e) => c.setSubject(e.target.value)}
+                        placeholder=" موضوع یادداشت "
                     />
                 </div>
                 <div className="editor-todo-text">
                     <textarea
                         value={c.todo}
                         onChange={(e) => c.setTodo(e.target.value)}
+                        placeholder="متن یادداشت"
                     />
                 </div>
             </div>

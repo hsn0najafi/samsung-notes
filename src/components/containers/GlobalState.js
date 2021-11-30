@@ -76,7 +76,7 @@ const GlobalState = ({ children }) => {
     const [showCategoriPopUp, setShowCategoriPopUp] = useState(false);
     const [showSearchBar, setShowSearchBar] = useState(false);
     const [showMoreOptions, setShowMoreOptions] = useState(false);
-    const [showEditorContainer, setShowEditorContainer] = useState(false);
+    const [showEditorContainer, setShowEditorContainer] = useState(true);
 
     // -------------------------------------------------------------------
 
