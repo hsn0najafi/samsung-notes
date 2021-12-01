@@ -328,6 +328,10 @@
   box-shadow: 0.5px 0.5px 10px rgb(119, 119, 119);
 }
 
+.editor-nav:hover {
+  box-shadow: 0.5px 0.5px 0.5px 5px rgba(255, 166, 0, 0.479);
+}
+
 .new-btn {
   width: 90px;
   display: flex;
@@ -391,4 +395,24 @@
   border-radius: 5px;
   border: none;
   padding: 5px;
+}
+
+.currentCatName {
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.currentCatName > i {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all ease 0.25s;
+  color: black;
+}
+
+.currentCatName > i:hover {
+  background-color: orange;
+  color: white;
 }

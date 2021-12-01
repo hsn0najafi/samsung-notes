@@ -1,13 +1,23 @@
 import { useContext } from "react";
 
 import Context from "../../context/Context";
+import PopUp from "../header/PopUp";
 
 const Editor = () => {
   const c = useContext(Context);
   return (
     <div className="editor-container animate__animated animate__slideInRight animate__faster flex-center-col">
       <div className="editor-main">
-        <nav className="editor-nav"></nav>
+        <nav className="editor-nav">
+          <div className="currentCatName flex-center-row">
+            {c.currentCategori}
+            <i
+              className="catNameButton fa fa-angle-down flex-center-row"
+              onClick={c.handleSetShowCategoriPopUp}
+            ></i>
+          </div>
+          {c.showCategoriPopUp ? <PopUp /> : null}
+        </nav>
         <div className="new-btn">
           <button
             className="new-btn-del flex-center-row"

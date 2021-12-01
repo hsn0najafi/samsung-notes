@@ -29,6 +29,7 @@ const Header = () => {
         className="moreOptions-button fa fa-ellipsis-v"
         onClick={c.handleSetShowMoreOptions}
       />
+
       {c.showMoreOptions ? <MoreOptions /> : null}
     </div>
   );

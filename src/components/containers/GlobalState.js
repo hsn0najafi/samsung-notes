@@ -159,4 +159,3 @@ const GlobalState = ({ children }) => {
 };
 
 export default GlobalState;
-s
