@@ -7,34 +7,31 @@ import Context from "../../context/Context";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-    const c = useContext(Context);
+  const c = useContext(Context);
 
-    return (
-        <div className="header-container">
-            <div className="catName">
-                <Link to="/">{c.currentCategori}</Link>
-                <i
-                    className="catNameButton fa fa-angle-down"
-                    onClick={c.handleSetShowCategoriPopUp}
-                ></i>
-            </div>
-            {c.showCategoriPopUp ? <PopUp /> : null}
+  return (
+    <div className="header-container">
+      <div className="catName">
+        <Link to="/">{c.currentCategori}</Link>
+        <i
+          className="catNameButton fa fa-angle-down"
+          onClick={c.handleSetShowCategoriPopUp}
+        ></i>
+      </div>
+      {c.showCategoriPopUp ? <PopUp /> : null}
 
-            <button
-                className="show-searchBar"
-                onClick={c.handleSetShowSearchBar}
-            >
-                SEARCH
-            </button>
-            {c.showSearchBar ? <SearchBar /> : null}
+      <button className="show-searchBar" onClick={c.handleSetShowSearchBar}>
+        SEARCH
+      </button>
+      {c.showSearchBar ? <SearchBar /> : null}
 
-            <button
-                className="moreOptions-button fa fa-ellipsis-v"
-                onClick={c.handleSetShowMoreOptions}
-            />
-            {c.showMoreOptions ? <MoreOptions /> : null}
-        </div>
-    );
+      <button
+        className="moreOptions-button fa fa-ellipsis-v"
+        onClick={c.handleSetShowMoreOptions}
+      />
+      {c.showMoreOptions ? <MoreOptions /> : null}
+    </div>
+  );
 };
 
 export default Header;
