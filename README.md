@@ -1,6 +1,6 @@
 # react-todo
 
-React CRUD Operations In Todo App
+Samsung Android 8 Memo App
 
 ## How To Run
 
