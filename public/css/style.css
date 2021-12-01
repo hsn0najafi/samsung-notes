@@ -1,384 +1,384 @@
 .todos {
-    width: 100%;
-    height: var(--todos-container-height);
-    overflow: hidden;
-    padding-top: 50px;
-    padding-bottom: 60px;
-    overflow-y: scroll;
+  width: 100%;
+  height: var(--todos-container-height);
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  overflow-y: scroll;
 
-    width: var(--todos-container-width);
-    margin-left: auto;
-    margin-top: 0px;
-    height: 100%;
-    box-shadow: inset 0.1px 0.1px 10px #ccc;
+  width: var(--todos-container-width);
+  margin-left: auto;
+  margin-top: 0px;
+  height: 100%;
+  box-shadow: inset 0.1px 0.1px 10px #ccc;
 }
 
 .todo {
-    width: 95%;
-    height: 95px;
-    border: none;
-    background-color: #fff;
-    box-shadow: 0 0 5px #888;
-    padding: 0px 15px;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    margin: var(--todos-margin) !important;
-    transition: 0.15s ease all;
+  width: 95%;
+  height: 95px;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 0 5px #888;
+  padding: 0px 15px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  margin: var(--todos-margin) !important;
+  transition: 0.15s ease all;
 }
 
 .todo:hover {
-    box-shadow: 0.5px 0.5px 10px rgb(0, 0, 0);
+  box-shadow: 0.5px 0.5px 10px rgb(0, 0, 0);
 }
 
 .todo-subject {
-    font-size: 1rem;
-    overflow: hidden;
-    font-weight: bold;
+  font-size: 1rem;
+  overflow: hidden;
+  font-weight: bold;
 }
 
 .todo-text {
-    margin-top: 5px;
-    font-size: 0.9rem;
-    overflow-wrap: break-word;
-    height: 3rem;
-    overflow: hidden;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  overflow-wrap: break-word;
+  height: 3rem;
+  overflow: hidden;
 }
 
 .new-todo-button {
-    width: 50px;
-    height: 50px;
-    border: none;
-    background-color: #ffffff;
-    border-radius: 50%;
-    position: fixed;
-    z-index: 100;
-    bottom: 10px;
-    right: 20px;
-    background-color: orange;
-    text-shadow: 0 0 1px rgb(129, 129, 129);
-    color: #fff;
-    font-size: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 100;
+  bottom: 10px;
+  right: 20px;
+  background-color: orange;
+  text-shadow: 0 0 1px rgb(129, 129, 129);
+  color: #fff;
+  font-size: 20px;
 
-    right: calc(var(--popUps-right) + 20px);
+  right: calc(var(--popUps-right) + 20px);
 }
 
 .new-todo-button:hover {
-    box-shadow: 0 0 10px rgb(133, 133, 133);
+  box-shadow: 0 0 10px rgb(133, 133, 133);
 }
 
 .editor-container {
-    width: var(--todos-container-width);
-    height: 100vh;
-    background-color: rgb(248, 255, 185);
-    position: fixed;
-    right: var(--popUps-right);
-    bottom: 0;
-    transition: 0.25s ease all;
+  width: var(--todos-container-width);
+  height: 100vh;
+  background-color: rgb(248, 255, 185);
+  position: fixed;
+  right: var(--popUps-right);
+  bottom: 0;
+  transition: 0.25s ease all;
 }
 
 .header-container {
-    width: var(--todos-container-width);
-    position: relative;
-    height: var(--header-height);
-    border: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: orange;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  width: var(--todos-container-width);
+  position: relative;
+  height: var(--header-height);
+  border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .popUp-catergoriSelect {
-    overflow-x: hidden;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    background-color: orange;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border: 0.1px solid black;
-    transition: 0.5s ease all;
-    z-index: 300;
+  overflow-x: hidden;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: orange;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 0.1px solid black;
+  transition: 0.5s ease all;
+  z-index: 300;
 
-    width: var(--todos-container-width);
+  width: var(--todos-container-width);
 }
 
 .popUpTop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: transparent;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
 }
 
 .popUp-catergoriSelect > div {
-    padding: 10px;
-    margin: 10px 5px;
-    border-radius: 5px;
-    background-color: rgb(18, 90, 207);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 95%;
+  padding: 10px;
+  margin: 10px 5px;
+  border-radius: 5px;
+  background-color: rgb(18, 90, 207);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
 }
 
 .catName {
-    color: #fff;
-    margin-left: 2.5%;
-    font-weight: bold;
-    text-shadow: 0 0 5px #999;
-    background-color: orange;
-    border: none;
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-    font-size: 1.1rem;
+  color: #fff;
+  margin-left: 2.5%;
+  font-weight: bold;
+  text-shadow: 0 0 5px #999;
+  background-color: orange;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  font-size: 1.1rem;
 }
 
 .catName > * {
-    font-weight: bold;
-    color: white;
+  font-weight: bold;
+  color: white;
 }
 
 .catNameButton {
-    margin-left: 2px;
-    font-size: 18px;
-    padding: 2px 5px;
-    border-radius: 50%;
-    transition: 0.5s ease all;
-    z-index: 100;
+  margin-left: 2px;
+  font-size: 18px;
+  padding: 2px 5px;
+  border-radius: 50%;
+  transition: 0.5s ease all;
+  z-index: 100;
 }
 
 .catNameButton:hover {
-    background-color: #fff;
-    color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
 .show-searchBar {
-    margin-right: 50px;
-    background-color: transparent;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    color: white;
-    transition: 0.5s ease all;
+  margin-right: 50px;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: 0.5s ease all;
 }
 
 .show-searchBar:hover {
-    text-shadow: 0 0 10px rgb(82, 82, 82);
+  text-shadow: 0 0 10px rgb(82, 82, 82);
 }
 
 .fixed-searchBar {
-    position: fixed;
-    width: 100%;
-    position: absolute;
-    height: 50px;
-    top: 0;
-    background-color: orange;
+  position: fixed;
+  width: 100%;
+  position: absolute;
+  height: 50px;
+  top: 0;
+  background-color: orange;
 
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: ease 1s all;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: ease 1s all;
 }
 
 .searchBar-backButton {
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    border: none;
-    background-color: orange;
-    color: white;
-    border-radius: 50%;
-    margin-left: 2.5%;
-    transition: ease 0.5s all;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: orange;
+  color: white;
+  border-radius: 50%;
+  margin-left: 2.5%;
+  transition: ease 0.5s all;
 }
 
 .searchBar-backButton:hover {
-    background-color: #fff;
-    color: black;
+  background-color: #fff;
+  color: black;
 }
 
 .searchBar-input {
-    display: flex;
-    background-color: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    align-items: center;
-    margin: 0px 20px;
-    width: 80%;
+  display: flex;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: center;
+  margin: 0px 20px;
+  width: 80%;
 }
 
 .searchBar-input:hover {
-    box-shadow: 0.1px 0.1px 0.1px 5px rgba(255, 255, 255, 0.397);
+  box-shadow: 0.1px 0.1px 0.1px 5px rgba(255, 255, 255, 0.397);
 }
 
 .searchBar-input > i {
-    font-size: 12px;
-    opacity: 0.5;
-    background-color: #fff;
-    border: none;
-    padding: 3px;
-    margin-left: 5px;
+  font-size: 12px;
+  opacity: 0.5;
+  background-color: #fff;
+  border: none;
+  padding: 3px;
+  margin-left: 5px;
 }
 
 .searchBar-input > input {
-    border: none;
-    margin-right: 5px;
-    width: 95%;
-    padding: 7px;
-    direction: rtl;
+  border: none;
+  margin-right: 5px;
+  width: 95%;
+  padding: 7px;
+  direction: rtl;
 }
 
 .moreOptions-button {
-    border: none;
-    background-color: orange;
-    color: white;
-    font-size: 17px;
-    width: 25px;
-    height: 25px;
-    transition: ease 0.25s background-color;
-    border-radius: 50%;
-    margin-right: 20px;
+  border: none;
+  background-color: orange;
+  color: white;
+  font-size: 17px;
+  width: 25px;
+  height: 25px;
+  transition: ease 0.25s background-color;
+  border-radius: 50%;
+  margin-right: 20px;
 }
 
 .moreOptions-button:hover {
-    background-color: #fff;
-    color: black;
+  background-color: #fff;
+  color: black;
 }
 
 .more-options {
-    border-radius: 5px;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 200;
-    background-color: #fff;
-    box-shadow: 0.25px 0.25px 10px rgba(0, 0, 0, 0.651);
+  border-radius: 5px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 200;
+  background-color: #fff;
+  box-shadow: 0.25px 0.25px 10px rgba(0, 0, 0, 0.651);
 
-    right: calc(var(--popUps-right) + 10px);
+  right: calc(var(--popUps-right) + 10px);
 }
 
 .more-options > * {
-    padding: 5px;
-    margin: 5px;
-    color: rgb(0, 0, 0);
-    background-color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: inset 0 0 8px #000;
-    display: block;
+  padding: 5px;
+  margin: 5px;
+  color: rgb(0, 0, 0);
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: inset 0 0 8px #000;
+  display: block;
 }
 
 .more-options > *:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.774);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.774);
 }
 
 .close-categoriSelect {
-    width: 100vw;
-    height: 2000px;
-    background-color: transparent;
-    position: fixed;
+  width: 100vw;
+  height: 2000px;
+  background-color: transparent;
+  position: fixed;
 }
 
 .about-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: var(--todos-container-width);
-    margin-left: auto;
+  width: var(--todos-container-width);
+  margin-left: auto;
 }
 
 .app-root {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 
 .editor-main {
-    width: 90%;
-    height: 90%;
-    position: relative;
+  width: 90%;
+  height: 90%;
+  position: relative;
 }
 
 .editor-nav {
-    width: 200px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    left: 0;
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-    border-radius: 5px;
-    background-color: orange;
-    color: white;
+  border-radius: 5px;
+  background-color: orange;
+  color: white;
 }
 
 .new-btn {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    right: 0;
-    top: 0;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .new-btn > button {
-    width: 100%;
-    height: 100%;
-    color: rgb(0, 0, 0), 255, 255
-    background-color: orange;
-    border-radius: 5px;
-    border: none;
+  width: 100%;
+  height: 100%;
+  color: rgb(0, 0, 0), 255, 255;
+  background-color: orange;
+  border-radius: 5px;
+  border: none;
 }
 
 .new-btn > button:hover {
-    box-shadow: inset 0.5px 0.5px 10px rgb(66, 66, 66);
+  box-shadow: inset 0.5px 0.5px 10px rgb(66, 66, 66);
 }
 
 .editor-todo-title {
-    width: 100%;
-    margin-top: 40px;
-    height: 40px;
-    border-bottom: 1px solid #ccc;
+  width: 100%;
+  margin-top: 40px;
+  height: 40px;
+  border-bottom: 1px solid #ccc;
 }
 
 .editor-todo-title > * {
-    width: 100%;
-    height: 100%;
-    border: none;
-    padding: 5px;
-    font-size: 0.9rem;
-    direction: rtl;
-    border-radius: 5px;
-    box-shadow: 0.5px 0.5px 10px rgb(189, 189, 189);
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 5px;
+  font-size: 0.9rem;
+  direction: rtl;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 10px rgb(189, 189, 189);
 }
 
 .editor-todo-text {
-    width: 100%;
-    height: calc(100% - 80px);
+  width: 100%;
+  height: calc(100% - 80px);
 }
 
 .editor-todo-text > * {
-    box-shadow: 0.5px 0.5px 10px rgb(189, 189, 189);
-    width: 100%;
-    height: 100%;
-    font-size: 0.9rem;
-    direction: rtl;
-    background-color: #fff;
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
+  box-shadow: 0.5px 0.5px 10px rgb(189, 189, 189);
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem;
+  direction: rtl;
+  background-color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
 }
