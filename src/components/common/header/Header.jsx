@@ -18,7 +18,9 @@ const Header = () => {
           onClick={c.handleSetShowCategoriPopUp}
         ></i>
       </div>
-      {c.showCategoriPopUp ? <PopUp /> : null}
+      {c.showCategoriPopUp && c.showEditorContainer === false ? (
+        <PopUp />
+      ) : null}
 
       <button className="show-searchBar" onClick={c.handleSetShowSearchBar}>
         SEARCH

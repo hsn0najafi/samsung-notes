@@ -11,7 +11,10 @@ const PopUp = () => {
         <div className="popUpTop" onClick={c.handleSetShowCategoriPopUp}></div>
       ) : null}
 
-      <div className="popUp-catergoriSelect flex-center-col animate__animated animate__slideInUp animate__faster">
+      <div
+        className="popUp-catergoriSelect flex-center-col animate__animated animate__slideInUp animate__faster"
+        style={c.showEditorContainer ? { width: "100%" } : null}
+      >
         {c.categories.map((categori) => (
           <div key={categori.id}>
             <p>{categori.name}</p>
