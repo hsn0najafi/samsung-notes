@@ -9,7 +9,16 @@ const Editor = () => {
       <div className="editor-main">
         <nav className="editor-nav"></nav>
         <div className="new-btn">
-          <button className="flex-center-row" onClick={c.handleNewTodo}>
+          <button
+            className="new-btn-del flex-center-row"
+            onClick={c.handleSetShowEditorContainer}
+          >
+            <i className="fa fa-times"></i>
+          </button>
+          <button
+            className="new-btn-add flex-center-row"
+            onClick={c.handleNewTodo}
+          >
             <i className="fa fa-check"></i>
           </button>
         </div>

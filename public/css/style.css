@@ -329,7 +329,8 @@
 }
 
 .new-btn {
-  width: 40px;
+  width: 90px;
+  display: flex;
   height: 40px;
   position: absolute;
   right: 0;
@@ -344,10 +345,16 @@
   border-radius: 5px;
   border: none;
   box-shadow: 0.5px 0.5px 10px rgb(119, 119, 119);
+  margin: 0px 2.5px;
 }
 
-.new-btn > button:hover {
-  background-color: orange;
+.new-btn-add:hover {
+  background-color: green;
+  color: white;
+}
+
+.new-btn-del:hover {
+  background-color: red;
   color: white;
 }
 
