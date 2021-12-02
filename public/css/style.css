@@ -150,6 +150,11 @@
   color: white;
 }
 
+.catName > p {
+  width: 100px;
+  overflow: hidden;
+}
+
 .catNameButton {
   margin-left: 2px;
   font-size: 18px;
@@ -403,6 +408,7 @@
   width: 100%;
   height: 100%;
   justify-content: space-around;
+  overflow: hidden;
 }
 
 .currentCatName > i {
@@ -430,12 +436,28 @@
 }
 
 .categoriEditorTools > i {
-  transition: 0.25s padding ease;
+  transition: 0.25s all ease;
+  border: none;
+  border-radius: 50%;
+  padding: 7px;
 }
 
 .categoriEditorTools > i:hover {
   background-color: orange;
+}
+
+.popUpTop > input {
+  z-index: 200000;
+  margin-top: 100px;
+  margin-bottom: auto;
+  width: 70%;
+  height: 50px;
   border: none;
-  border-radius: 50%;
-  padding: 7px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 50px rgb(58, 58, 58);
+  direction: rtl;
+  font-size: 1.1rem;
+
+  padding: 5px;
+  text-align: center;
 }

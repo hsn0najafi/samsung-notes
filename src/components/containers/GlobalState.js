@@ -78,6 +78,8 @@ const GlobalState = ({ children }) => {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEditorContainer, setShowEditorContainer] = useState(true);
   const [categoriEditMode, setCategoriEditMode] = useState(false);
+  const [newCategoriTitle, setNewCategoriTitle] = useState("");
+  const [showCategoriNameInput, setShowCategoriNameInput] = useState(false);
 
   // -------------------------------------------------------------------
 
@@ -127,7 +129,9 @@ const GlobalState = ({ children }) => {
   };
 
   const handleSetShowCategoriPopUp = () => {
-    setShowCategoriPopUp(!showCategoriPopUp);
+    if (categoriEditMode === false) {
+      setShowCategoriPopUp(!showCategoriPopUp);
+    }
   };
 
   const handleSetShowSearchBar = () => {
@@ -157,6 +161,19 @@ const GlobalState = ({ children }) => {
     setCategories(undeletedCategories);
   };
 
+  const handleCategoriNameChange = (id) => {
+    setShowCategoriNameInput(!showCategoriNameInput);
+
+    if (newCategoriTitle !== "") {
+      const allCategories = [...categories];
+      const targetCategoriIndex = allCategories.findIndex((tg) => tg.id === id);
+      allCategories[targetCategoriIndex].name = newCategoriTitle;
+      setCategories(allCategories);
+    }
+
+    setNewCategoriTitle("");
+  };
+
   // ----------------------------------------------
 
   return (
@@ -182,6 +199,9 @@ const GlobalState = ({ children }) => {
         subject,
         setSubject,
         categoriEditMode,
+        setNewCategoriTitle,
+        newCategoriTitle,
+        showCategoriNameInput,
 
         handleNewTodo,
         handleSetShowTodos,
@@ -192,6 +212,7 @@ const GlobalState = ({ children }) => {
         handleSetDefaultCategori,
         handleToggleCategoriEditMode,
         handleDeleteCategori,
+        handleCategoriNameChange,
       }}
     >
       {children}

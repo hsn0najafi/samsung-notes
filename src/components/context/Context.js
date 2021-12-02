@@ -21,6 +21,9 @@ const Context = createContext({
   subject: "",
   setSubject: "",
   categoriEditMode: Boolean,
+  setNewCategoriTitle: Boolean,
+  newCategoriTitle: "",
+  showCategoriNameInput: Boolean,
 
   handleNewTodo: () => {},
   handleSetShowTodos: () => {},
@@ -31,6 +34,7 @@ const Context = createContext({
   handleSetDefaultCategori: () => {},
   handleToggleCategoriEditMode: () => {},
   handleDeleteCategori: () => {},
+  handleCategoriNameChange: () => {},
 });
 
 export default Context;

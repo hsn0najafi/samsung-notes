@@ -12,7 +12,9 @@ const Header = () => {
   return (
     <div className="header-container">
       <div className="catName">
-        <Link to="/">{c.currentCategori}</Link>
+        <p>
+          <Link to="/">{c.currentCategori}</Link>
+        </p>
         <i
           className="catNameButton fa fa-angle-down"
           onClick={c.handleSetShowCategoriPopUp}

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+ import { useContext } from "react";
 
 import Context from "../../context/Context";
 import PopUp from "../header/PopUp";
@@ -10,7 +10,9 @@ const Editor = () => {
       <div className="editor-main">
         <nav className="editor-nav">
           <div className="currentCatName flex-center-row">
-            {c.currentCategori}
+            <p style={{ width: "100px", overflow: "hidden" }}>
+              {c.currentCategori}
+            </p>
             <i
               className="catNameButton fa fa-angle-down flex-center-row"
               onClick={c.handleSetShowCategoriPopUp}

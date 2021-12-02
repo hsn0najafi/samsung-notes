@@ -8,7 +8,23 @@ const PopUp = () => {
   return (
     <div>
       {c.showCategoriPopUp ? (
-        <div className="popUpTop" onClick={c.handleSetShowCategoriPopUp}></div>
+        <div
+          className="popUpTop flex-center-col"
+          onClick={c.handleSetShowCategoriPopUp}
+        >
+          <input
+            placeholder="اسم جدید رو وارد کن ..."
+            className="animate__animated animate__fadeIn"
+            value={c.newCategoriTitle}
+            style={
+              c.categoriEditMode && c.showCategoriNameInput
+                ? null
+                : { display: "none" }
+            }
+            onChange={(e) => c.setNewCategoriTitle(e.target.value)}
+            type="text"
+          ></input>
+        </div>
       ) : null}
 
       <div
@@ -18,7 +34,7 @@ const PopUp = () => {
         {c.categories.map((categori) => (
           <div
             onClick={() => c.handleSetDefaultCategori(categori.id)}
-            className="categori"
+            className="categori animate__animated animate__fadeIn "
             key={categori.id}
           >
             <p>{categori.name}</p>
@@ -30,7 +46,12 @@ const PopUp = () => {
                 className="fa fa-trash"
                 onClick={() => c.handleDeleteCategori(categori.id)}
               ></i>
-              <i className="fa fa-pen"></i>
+              <i
+                onClick={() => c.handleCategoriNameChange(categori.id)}
+                className={
+                  c.showCategoriNameInput ? "fa fa-check" : "fa fa-pen"
+                }
+              ></i>
             </div>
             <p style={{ width: "3rem", alignItems: "center" }}>
               {categori.count}
