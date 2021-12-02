@@ -100,10 +100,25 @@ const GlobalState = ({ children }) => {
     if (subject !== "" && todo !== "") {
       setTodos(Todos);
 
+      // Increase Default Categori Count
+      increaseCategoriCount();
+
       // Empty Editor Inputs
       setSubject("");
       setTodo("");
     }
+  };
+
+  const increaseCategoriCount = () => {
+    // This All Categories : Array
+    const allCategories = [...categories];
+    // Find Target Categori ID
+    const CurrentCategoriId = allCategories.findIndex(
+      (cc) => (cc.name = currentCategori)
+    );
+
+    allCategories[CurrentCategoriId].count++;
+    setCategories(allCategories);
   };
 
   const handleSetShowTodos = () => {
