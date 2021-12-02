@@ -416,3 +416,7 @@
   background-color: orange;
   color: white;
 }
+
+.categori:hover {
+  box-shadow: 0.25px 0.25px 0.25px 5px rgba(255, 255, 255, 0.541);
+}

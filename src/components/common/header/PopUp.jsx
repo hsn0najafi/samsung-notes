@@ -16,7 +16,11 @@ const PopUp = () => {
         style={c.showEditorContainer ? { width: "100%" } : null}
       >
         {c.categories.map((categori) => (
-          <div key={categori.id}>
+          <div
+            onClick={() => c.handleSetDefaultCategori(categori.id)}
+            className="categori"
+            key={categori.id}
+          >
             <p>{categori.name}</p>
             <p>{categori.count}</p>
           </div>

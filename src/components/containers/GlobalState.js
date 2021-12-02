@@ -120,6 +120,11 @@ const GlobalState = ({ children }) => {
     setShowEditorContainer(!showEditorContainer);
   };
 
+  const handleSetDefaultCategori = (id) => {
+    const selectedCategori = [...categories].filter((c) => c.id === id);
+    setCurrentCategori(selectedCategori[0].name);
+  };
+
   // ----------------------------------------------
 
   return (
@@ -151,6 +156,7 @@ const GlobalState = ({ children }) => {
         handleSetShowSearchBar,
         handleSetShowMoreOptions,
         handleSetShowEditorContainer,
+        handleSetDefaultCategori,
       }}
     >
       {children}

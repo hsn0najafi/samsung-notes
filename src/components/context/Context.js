@@ -27,6 +27,7 @@ const Context = createContext({
   handleSetShowSearchBar: () => {},
   handleSetShowMoreOptions: () => {},
   handleSetShowEditorContainer: () => {},
+  handleSetDefaultCategori: () => {},
 });
 
 export default Context;
