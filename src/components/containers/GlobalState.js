@@ -90,14 +90,20 @@ const GlobalState = ({ children }) => {
 
     // Push New Todo Before Another Todos
     let Todos = [Todo, ...todos];
-    setTodos(Todos);
-
-    // Empty Editor Inputs
-    setSubject("");
-    setTodo("");
+    authenticateNewTodos(Todos);
 
     // Close From Editor After Add
     setShowEditorContainer(!showEditorContainer);
+  };
+
+  const authenticateNewTodos = (Todos) => {
+    if (subject !== "" && todo !== "") {
+      setTodos(Todos);
+
+      // Empty Editor Inputs
+      setSubject("");
+      setTodo("");
+    }
   };
 
   const handleSetShowTodos = () => {
