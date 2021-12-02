@@ -10,7 +10,6 @@ const MoreOptions = () => {
     <Fragment>
       <div className="more-options animate__animated animate__fadeIn animate__faster">
         <div className="edit-todos">Edit</div>
-        <div className="manage-catergories">Manage Categories</div>
         <Link to="/about">
           <span onClick={c.handleSetShowMoreOptions}>About</span>
         </Link>

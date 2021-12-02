@@ -96,6 +96,7 @@
 .popUp-catergoriSelect {
   overflow-x: hidden;
   position: fixed;
+  padding: 10px 0;
   bottom: 0;
   right: 0;
   left: 0;
@@ -277,6 +278,7 @@
   border-radius: 5px;
   cursor: pointer;
   box-shadow: inset 0 0 8px #000;
+  min-width: 100px;
   display: block;
 }
 
@@ -419,4 +421,21 @@
 
 .categori:hover {
   box-shadow: 0.25px 0.25px 0.25px 5px rgba(255, 255, 255, 0.541);
+}
+
+.categoriEditorTools {
+  width: 200px;
+  justify-content: space-around;
+  margin-left: auto;
+}
+
+.categoriEditorTools > i {
+  transition: 0.25s padding ease;
+}
+
+.categoriEditorTools > i:hover {
+  background-color: orange;
+  border: none;
+  border-radius: 50%;
+  padding: 7px;
 }

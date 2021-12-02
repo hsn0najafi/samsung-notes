@@ -22,9 +22,26 @@ const PopUp = () => {
             key={categori.id}
           >
             <p>{categori.name}</p>
-            <p>{categori.count}</p>
+            <div
+              style={c.categoriEditMode ? null : { display: "none" }}
+              className="categoriEditorTools flex-center-row"
+            >
+              <i className="fa fa-trash"></i>
+              <i className="fa fa-pen"></i>
+            </div>
+            <p style={{ width: "3rem", alignItems: "center" }}>
+              {categori.count}
+            </p>
           </div>
         ))}
+        <div
+          className="categori"
+          style={{ background: "red" }}
+          onClick={c.handleToggleCategoriEditMode}
+        >
+          <p>Edit Catrgories</p>
+          <p>- </p>
+        </div>
       </div>
     </div>
   );

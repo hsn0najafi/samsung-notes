@@ -73,10 +73,11 @@ const GlobalState = ({ children }) => {
   ]);
   const [showTodos, setShowTodos] = useState(true);
   const [currentCategori, setCurrentCategori] = useState("Favorite");
-  const [showCategoriPopUp, setShowCategoriPopUp] = useState(false);
+  const [showCategoriPopUp, setShowCategoriPopUp] = useState(true);
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEditorContainer, setShowEditorContainer] = useState(true);
+  const [categoriEditMode, setCategoriEditMode] = useState(false);
 
   // -------------------------------------------------------------------
 
@@ -146,6 +147,11 @@ const GlobalState = ({ children }) => {
     setCurrentCategori(selectedCategori[0].name);
   };
 
+  const handleToggleCategoriEditMode = () => {
+    setCategoriEditMode(!categoriEditMode);
+    console.log(categoriEditMode);
+  };
+
   // ----------------------------------------------
 
   return (
@@ -170,6 +176,7 @@ const GlobalState = ({ children }) => {
         showEditorContainer,
         subject,
         setSubject,
+        categoriEditMode,
 
         handleNewTodo,
         handleSetShowTodos,
@@ -178,6 +185,7 @@ const GlobalState = ({ children }) => {
         handleSetShowMoreOptions,
         handleSetShowEditorContainer,
         handleSetDefaultCategori,
+        handleToggleCategoriEditMode,
       }}
     >
       {children}

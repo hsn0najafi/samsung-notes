@@ -20,6 +20,7 @@ const Context = createContext({
   showEditorContainer: Boolean,
   subject: "",
   setSubject: "",
+  categoriEditMode: Boolean,
 
   handleNewTodo: () => {},
   handleSetShowTodos: () => {},
@@ -28,6 +29,7 @@ const Context = createContext({
   handleSetShowMoreOptions: () => {},
   handleSetShowEditorContainer: () => {},
   handleSetDefaultCategori: () => {},
+  handleToggleCategoriEditMode: () => {},
 });
 
 export default Context;
