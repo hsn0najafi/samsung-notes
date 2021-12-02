@@ -30,6 +30,7 @@ const Context = createContext({
   handleSetShowEditorContainer: () => {},
   handleSetDefaultCategori: () => {},
   handleToggleCategoriEditMode: () => {},
+  handleDeleteCategori: () => {},
 });
 
 export default Context;

@@ -149,7 +149,12 @@ const GlobalState = ({ children }) => {
 
   const handleToggleCategoriEditMode = () => {
     setCategoriEditMode(!categoriEditMode);
-    console.log(categoriEditMode);
+  };
+
+  const handleDeleteCategori = (id) => {
+    const Categories = [...categories];
+    const undeletedCategories = Categories.filter((c) => c.id !== id);
+    setCategories(undeletedCategories);
   };
 
   // ----------------------------------------------
@@ -186,6 +191,7 @@ const GlobalState = ({ children }) => {
         handleSetShowEditorContainer,
         handleSetDefaultCategori,
         handleToggleCategoriEditMode,
+        handleDeleteCategori,
       }}
     >
       {children}

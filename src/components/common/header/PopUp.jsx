@@ -26,7 +26,10 @@ const PopUp = () => {
               style={c.categoriEditMode ? null : { display: "none" }}
               className="categoriEditorTools flex-center-row"
             >
-              <i className="fa fa-trash"></i>
+              <i
+                className="fa fa-trash"
+                onClick={() => c.handleDeleteCategori(categori.id)}
+              ></i>
               <i className="fa fa-pen"></i>
             </div>
             <p style={{ width: "3rem", alignItems: "center" }}>
