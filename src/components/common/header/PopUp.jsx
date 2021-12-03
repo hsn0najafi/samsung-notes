@@ -64,7 +64,9 @@ const PopUp = () => {
           onClick={c.handleToggleCategoriEditMode}
         >
           <p>Edit Catrgories</p>
-          <p>- </p>
+          <p style={{ width: "3rem", alignItems: "center" }}>
+            <i className="fa fa-plus"></i>
+          </p>
         </div>
       </div>
     </div>
