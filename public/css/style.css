@@ -74,6 +74,7 @@
   height: 100vh;
   background-color: rgb(255, 255, 255);
   position: fixed;
+  z-index: 10000000;
   right: var(--popUps-right);
   bottom: 0;
   transition: 0.25s ease all;
@@ -85,6 +86,7 @@
   height: var(--header-height);
   border: none;
   position: fixed;
+  z-index: 100000;
   top: 0;
   left: 0;
   background-color: orange;
@@ -476,5 +478,24 @@
 
 .addNewCategoriButton > i:hover {
   background-color: blue;
+  color: white;
+}
+
+.todo-tools {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  padding-top: 5px;
+  position: relative;
+}
+
+.todo-tools > * {
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.todo-tools > *:hover {
+  background-color: orange;
   color: white;
 }

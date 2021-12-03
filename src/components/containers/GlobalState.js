@@ -73,13 +73,14 @@ const GlobalState = ({ children }) => {
   ]);
   const [showTodos, setShowTodos] = useState(true);
   const [currentCategori, setCurrentCategori] = useState("Favorite");
-  const [showCategoriPopUp, setShowCategoriPopUp] = useState(true);
+  const [showCategoriPopUp, setShowCategoriPopUp] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showMoreOptions, setShowMoreOptions] = useState(false);
-  const [showEditorContainer, setShowEditorContainer] = useState(true);
+  const [showEditorContainer, setShowEditorContainer] = useState(false);
   const [categoriEditMode, setCategoriEditMode] = useState(false);
   const [newCategoriTitle, setNewCategoriTitle] = useState("");
   const [showCategoriNameInput, setShowCategoriNameInput] = useState(false);
+  const [todosEditMode, setTodosEditMode] = useState(false);
 
   // -------------------------------------------------------------------
 
@@ -191,6 +192,12 @@ const GlobalState = ({ children }) => {
     }
   };
 
+  const handleToggleTodosEditMode = () => {
+    setTodosEditMode(!todosEditMode);
+
+    console.log("d");
+  };
+
   // ----------------------------------------------
 
   return (
@@ -219,6 +226,7 @@ const GlobalState = ({ children }) => {
         setNewCategoriTitle,
         newCategoriTitle,
         showCategoriNameInput,
+        todosEditMode,
 
         handleNewTodo,
         handleSetShowTodos,
@@ -231,6 +239,7 @@ const GlobalState = ({ children }) => {
         handleDeleteCategori,
         handleCategoriNameChange,
         handleAddNewCategori,
+        handleToggleTodosEditMode,
       }}
     >
       {children}

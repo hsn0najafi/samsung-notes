@@ -1,6 +1,7 @@
 import { createContext } from "react";
 
 const Context = createContext({
+  //! It's Just For AutoComplete
   todos: [],
   setTodos: () => {},
   todo: "",
@@ -24,6 +25,7 @@ const Context = createContext({
   setNewCategoriTitle: Boolean,
   newCategoriTitle: "",
   showCategoriNameInput: Boolean,
+  todosEditMode: Boolean,
 
   handleNewTodo: () => {},
   handleSetShowTodos: () => {},
@@ -36,6 +38,7 @@ const Context = createContext({
   handleDeleteCategori: () => {},
   handleCategoriNameChange: () => {},
   handleAddNewCategori: () => {},
+  handleToggleTodosEditMode: () => {},
 });
 
 export default Context;
