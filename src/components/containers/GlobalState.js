@@ -153,6 +153,7 @@ const GlobalState = ({ children }) => {
 
   const handleToggleCategoriEditMode = () => {
     setCategoriEditMode(!categoriEditMode);
+    setShowCategoriNameInput(!showCategoriNameInput);
   };
 
   const handleDeleteCategori = (id) => {
@@ -172,6 +173,22 @@ const GlobalState = ({ children }) => {
     }
 
     setNewCategoriTitle("");
+  };
+
+  const handleAddNewCategori = () => {
+    const allCategories = [...categories];
+    const newCategori = {
+      id: uuidv4(),
+      name: newCategoriTitle,
+      count: 0,
+    };
+
+    if (newCategoriTitle !== "") {
+      allCategories.push(newCategori);
+      setCategories(allCategories);
+
+      setNewCategoriTitle("");
+    }
   };
 
   // ----------------------------------------------
@@ -213,6 +230,7 @@ const GlobalState = ({ children }) => {
         handleToggleCategoriEditMode,
         handleDeleteCategori,
         handleCategoriNameChange,
+        handleAddNewCategori,
       }}
     >
       {children}

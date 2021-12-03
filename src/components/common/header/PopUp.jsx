@@ -59,13 +59,16 @@ const PopUp = () => {
           </div>
         ))}
         <div
-          className="categori"
-          style={{ background: "red" }}
+          className="categoriEditor categori flex-center-row"
+          style={{ background: "red", position: "fixed", bottom: "0" }}
           onClick={c.handleToggleCategoriEditMode}
         >
           <p>Edit Catrgories</p>
-          <p style={{ width: "3rem", alignItems: "center" }}>
-            <i className="fa fa-plus"></i>
+          <p
+            style={{ width: "5rem", alignItems: "center" }}
+            className="addNewCategoriButton flex-center-col"
+          >
+            <i onClick={c.handleAddNewCategori} className="fa fa-plus"></i>
           </p>
         </div>
       </div>

@@ -35,6 +35,7 @@ const Context = createContext({
   handleToggleCategoriEditMode: () => {},
   handleDeleteCategori: () => {},
   handleCategoriNameChange: () => {},
+  handleAddNewCategori: () => {},
 });
 
 export default Context;
