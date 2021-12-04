@@ -80,7 +80,7 @@ const GlobalState = ({ children }) => {
   const [categoriEditMode, setCategoriEditMode] = useState(false);
   const [newCategoriTitle, setNewCategoriTitle] = useState("");
   const [showCategoriNameInput, setShowCategoriNameInput] = useState(false);
-  const [todosEditMode, setTodosEditMode] = useState(false);
+  const [todosEditMode, setTodosEditMode] = useState(true);
 
   // -------------------------------------------------------------------
 
@@ -194,8 +194,11 @@ const GlobalState = ({ children }) => {
 
   const handleToggleTodosEditMode = () => {
     setTodosEditMode(!todosEditMode);
+  };
 
-    console.log("d");
+  const handleDeleteTodos = (id) => {
+    const undeletedTodos = [...todos].filter((t) => t.id !== id);
+    setTodos(undeletedTodos);
   };
 
   // ----------------------------------------------
@@ -240,6 +243,7 @@ const GlobalState = ({ children }) => {
         handleCategoriNameChange,
         handleAddNewCategori,
         handleToggleTodosEditMode,
+        handleDeleteTodos,
       }}
     >
       {children}
