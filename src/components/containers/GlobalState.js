@@ -208,6 +208,7 @@ const GlobalState = ({ children }) => {
 
   const handleToggleTodosEditMode = () => {
     setTodosEditMode(!todosEditMode);
+    setShowMoreOptions(!showMoreOptions);
   };
 
   const handleDeleteTodos = (id) => {
