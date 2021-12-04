@@ -214,6 +214,10 @@ const GlobalState = ({ children }) => {
   const handleDeleteTodos = (id) => {
     const undeletedTodos = [...todos].filter((t) => t.id !== id);
     setTodos(undeletedTodos);
+
+    if (todos.length === 1) {
+      setTodosEditMode(!todosEditMode);
+    }
   };
 
   const handleEditTodos = (id) => {
