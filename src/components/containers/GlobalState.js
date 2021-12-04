@@ -80,7 +80,7 @@ const GlobalState = ({ children }) => {
   const [categoriEditMode, setCategoriEditMode] = useState(false);
   const [newCategoriTitle, setNewCategoriTitle] = useState("");
   const [showCategoriNameInput, setShowCategoriNameInput] = useState(false);
-  const [todosEditMode, setTodosEditMode] = useState(true);
+  const [todosEditMode, setTodosEditMode] = useState(false);
   const [currentEditingTodoID, setCurrentEditingTodoID] = useState();
 
   // -------------------------------------------------------------------
