@@ -1,4 +1,4 @@
- import { useContext } from "react";
+import { useContext } from "react";
 
 import Context from "../../context/Context";
 import PopUp from "../header/PopUp";
@@ -30,6 +30,9 @@ const Editor = () => {
           <button
             className="new-btn-add flex-center-row"
             onClick={c.handleNewTodo}
+            // onClick={() =>
+            //   c.todosEditMode ? c.handleEditTodos() : c.handleNewTodo()
+            // }
           >
             <i className="fa fa-check"></i>
           </button>

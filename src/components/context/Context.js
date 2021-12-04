@@ -20,12 +20,13 @@ const Context = createContext({
   setShowMoreOptions: () => {},
   showEditorContainer: Boolean,
   subject: "",
-  setSubject: "",
+  setSubject: () => {},
   categoriEditMode: Boolean,
-  setNewCategoriTitle: Boolean,
-  newCategoriTitle: "",
+  setNewCategoriTitle: () => {},
+  newCategoriTitle: () => {},
   showCategoriNameInput: Boolean,
   todosEditMode: Boolean,
+  setCurrentEditingTodoID: () => {},
 
   handleNewTodo: () => {},
   handleSetShowTodos: () => {},
@@ -40,6 +41,8 @@ const Context = createContext({
   handleAddNewCategori: () => {},
   handleToggleTodosEditMode: () => {},
   handleDeleteTodos: () => {},
+  handleEditTodos: () => {},
+  handleEditTodos: () => {},
 });
 
 export default Context;

@@ -81,23 +81,41 @@ const GlobalState = ({ children }) => {
   const [newCategoriTitle, setNewCategoriTitle] = useState("");
   const [showCategoriNameInput, setShowCategoriNameInput] = useState(false);
   const [todosEditMode, setTodosEditMode] = useState(true);
+  const [currentEditingTodoID, setCurrentEditingTodoID] = useState();
 
   // -------------------------------------------------------------------
 
   const handleNewTodo = () => {
-    const Todo = {
-      id: uuidv4(),
-      categoriName: currentCategori,
-      subject,
-      text: todo,
-    };
+    if (todosEditMode) {
+      const allTodos = [...todos];
+      const todoIndex = allTodos.findIndex(
+        (t) => t.id === currentEditingTodoID
+      );
+      allTodos[todoIndex] = {
+        id: currentEditingTodoID,
+        categoriName: currentCategori,
+        subject,
+        text: todo,
+      };
+      setTodos(allTodos);
+    } else {
+      const Todo = {
+        id: uuidv4(),
+        categoriName: currentCategori,
+        subject,
+        text: todo,
+      };
 
-    // Push New Todo Before Another Todos
-    let Todos = [Todo, ...todos];
-    authenticateNewTodos(Todos);
+      // Push New Todo Before Another Todos
+      let Todos = [Todo, ...todos];
+      authenticateNewTodos(Todos);
 
-    // Close From Editor After Add
+      // Close From Editor After Add
+    }
     setShowEditorContainer(!showEditorContainer);
+    // Empty Editor Inputs
+    setSubject("");
+    setTodo("");
   };
 
   const authenticateNewTodos = (Todos) => {
@@ -106,10 +124,6 @@ const GlobalState = ({ children }) => {
 
       // Increase Default Categori Count
       increaseCategoriCount();
-
-      // Empty Editor Inputs
-      setSubject("");
-      setTodo("");
     }
   };
 
@@ -201,6 +215,11 @@ const GlobalState = ({ children }) => {
     setTodos(undeletedTodos);
   };
 
+  const handleEditTodos = (id) => {
+    setCurrentEditingTodoID(id);
+    setShowEditorContainer(!showEditorContainer);
+  };
+
   // ----------------------------------------------
 
   return (
@@ -230,6 +249,7 @@ const GlobalState = ({ children }) => {
         newCategoriTitle,
         showCategoriNameInput,
         todosEditMode,
+        setCurrentEditingTodoID,
 
         handleNewTodo,
         handleSetShowTodos,
@@ -244,6 +264,7 @@ const GlobalState = ({ children }) => {
         handleAddNewCategori,
         handleToggleTodosEditMode,
         handleDeleteTodos,
+        handleEditTodos,
       }}
     >
       {children}

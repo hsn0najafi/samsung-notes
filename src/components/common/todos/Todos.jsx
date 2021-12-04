@@ -18,6 +18,8 @@ const Todos = () => {
               key={t.id}
               subject={t.subject}
               handleDelete={() => c.handleDeleteTodos(t.id)}
+              //   handleEdit={() => }
+              handleEdit={() => c.handleEditTodos(t.id)}
             />
           ))}
         </div>

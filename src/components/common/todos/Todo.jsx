@@ -4,14 +4,14 @@ import PropTypes from "prop-types";
 
 import Context from "../../context/Context";
 
-const Todo = ({ text, subject, handleDelete }) => {
+const Todo = ({ text, subject, handleDelete, handleEdit }) => {
   const c = useContext(Context);
 
   return (
     <div className="todo">
       {c.todosEditMode ? (
         <div className="todo-tools">
-          <i className="fa fa-pen"></i>
+          <i className="fa fa-pen" onClick={handleEdit}></i>
           <i className="fa fa-trash" onClick={handleDelete}></i>
         </div>
       ) : null}
