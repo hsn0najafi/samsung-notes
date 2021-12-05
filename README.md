@@ -1,4 +1,4 @@
-# react-todo
+# samsung-notes
 
 Samsung Android 8 Memo App
 
