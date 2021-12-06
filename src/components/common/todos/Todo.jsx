@@ -9,14 +9,20 @@ const Todo = ({ text, subject, handleDelete, handleEdit }) => {
 
   return (
     <div className="todo">
+      <section>
+        <header>
+          <p className="todo-subject">{subject}</p>
+        </header>
+        <main>
+          <p className="todo-text">{text}</p>
+        </main>
+      </section>
       {c.todosEditMode ? (
-        <div className="todo-tools">
+        <article className="todo-tools flex-center-col">
           <i className="fa fa-pen" onClick={handleEdit}></i>
           <i className="fa fa-trash" onClick={handleDelete}></i>
-        </div>
+        </article>
       ) : null}
-      <p className="todo-subject">{subject}</p>
-      <p className="todo-text">{text}</p>
     </div>
   );
 };
