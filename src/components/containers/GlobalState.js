@@ -1,4 +1,5 @@
 import { useState } from "react";
+import sweetAlert from "sweetalert";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -121,6 +122,7 @@ const GlobalState = ({ children }) => {
   const authenticateNewTodos = (Todos) => {
     if (subject !== "" && todo !== "") {
       setTodos(Todos);
+      sweetAlert("Good job!", "You clicked the button!", "success");
 
       // Increase Default Categori Count
       increaseCategoriCount();
