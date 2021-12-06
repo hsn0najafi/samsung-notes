@@ -122,7 +122,7 @@ const GlobalState = ({ children }) => {
   const authenticateNewTodos = (Todos) => {
     if (subject !== "" && todo !== "") {
       setTodos(Todos);
-      sweetAlert("Good job!", "You clicked the button!", "success");
+      sweetAlert("Success", "Added To TodoList", "success");
 
       // Increase Default Categori Count
       increaseCategoriCount();
