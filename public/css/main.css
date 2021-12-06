@@ -1,3 +1,9 @@
+/* Font Awesome */
+@import url("./all.min.css");
+
+/* Animate.Css */
+@import url("./animate.min.css");
+
 /* All Reset Styles */
 @import url("./cssModules/reset.css");
 
@@ -14,6 +20,6 @@
 @import url("./cssModules/cmmonClasses.css");
 
 /* Styles */
-@import url("./style.css");
+@import url("./cssModules/style.css");
 
 /* Order Is Important :) */
