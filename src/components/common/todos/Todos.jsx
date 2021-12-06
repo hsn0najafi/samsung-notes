@@ -10,20 +10,17 @@ const Todos = () => {
 
   return (
     <MyFragment>
-      {c.showTodos ? (
-        <div className="todos">
-          {c.todos.map((t) => (
-            <Todo
-              text={t.text}
-              key={t.id}
-              subject={t.subject}
-              handleDelete={() => c.handleDeleteTodos(t.id)}
-              //   handleEdit={() => }
-              handleEdit={() => c.handleEditTodos(t.id)}
-            />
-          ))}
-        </div>
-      ) : null}
+      <div className="todos">
+        {c.todos.map((t) => (
+          <Todo
+            text={t.text}
+            key={t.id}
+            subject={t.subject}
+            handleDelete={() => c.handleDeleteTodos(t.id)}
+            handleEdit={() => c.handleEditTodos(t.id)}
+          />
+        ))}
+      </div>
     </MyFragment>
   );
 };

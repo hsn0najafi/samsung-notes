@@ -1,79 +1,21 @@
 import { useState } from "react";
-import sweetAlert from "sweetalert";
 
 import { v4 as uuidv4 } from "uuid";
+import sweetAlert from "sweetalert";
 
 import Context from "../context/Context";
 
 const GlobalState = ({ children }) => {
-  // --------------------------------
-
-  const [todos, setTodos] = useState([
-    {
-      id: 0,
-      subject: "SampleSampleSampleSampleSampleSampleSample",
-      text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-      categoriName: "favorite",
-    },
-    {
-      id: 1,
-      subject: "SampleSampleSampleSampleSampleSampleSample",
-      text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
-      categoriName: "private",
-    },
-    {
-      id: 2,
-      subject: "SampleSampleSampleSampleSampleSampleSample",
-      text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-      categoriName: "favorite",
-    },
-    {
-      id: 4,
-      subject: "SampleSampleSampleSampleSampleSampleSample",
-      text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-      categoriName: "favorite",
-    },
-    {
-      id: 5,
-      subject: "SampleSampleSampleSampleSampleSampleSample",
-      text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
-      categoriName: "private",
-    },
-    {
-      id: 6,
-      subject: "SampleSampleSampleSampleSampleSampleSample",
-      text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-      categoriName: "favorite",
-    },
-    {
-      id: 7,
-      subject: "SampleSampleSampleSampleSampleSampleSample",
-      text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-      categoriName: "favorite",
-    },
-    {
-      id: 8,
-      subject: "SampleSampleSampleSampleSampleSampleSample",
-      text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziue",
-      categoriName: "private",
-    },
-    {
-      id: 9,
-      subject: "SampleSampleSampleSampleSampleSampleSample",
-      text: "abhasgydaebhbzsdhgyegzfrhsdbhzsdbv zsjdvziuefhuegvbzuiwehfeuhrugfzbdshfgeruigfrbhfbvyrfehdjzfbdhfdg",
-      categoriName: "favorite",
-    },
-  ]);
+  /**
+   * All Aplication States
+   */
+  const [todos, setTodos] = useState([]);
   const [todo, setTodo] = useState("");
   const [subject, setSubject] = useState("");
   const [categories, setCategories] = useState([
-    { id: 0, name: "Favorite", count: 20 },
-    { id: 1, name: "Other", count: 30 },
-    { id: 2, name: "Work", count: 3 },
-    { id: 3, name: "Friday", count: 14 },
+    { id: 0, name: "default", count: 0 },
   ]);
-  const [showTodos, setShowTodos] = useState(true);
-  const [currentCategori, setCurrentCategori] = useState("Favorite");
+  const [currentCategori, setCurrentCategori] = useState("default");
   const [showCategoriPopUp, setShowCategoriPopUp] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showMoreOptions, setShowMoreOptions] = useState(false);
@@ -84,44 +26,57 @@ const GlobalState = ({ children }) => {
   const [todosEditMode, setTodosEditMode] = useState(false);
   const [currentEditingTodoID, setCurrentEditingTodoID] = useState();
 
-  // -------------------------------------------------------------------
-
   const handleNewTodo = () => {
     if (todosEditMode) {
-      const allTodos = [...todos];
-      const todoIndex = allTodos.findIndex(
-        (t) => t.id === currentEditingTodoID
-      );
-      allTodos[todoIndex] = {
-        id: currentEditingTodoID,
-        categoriName: currentCategori,
-        subject,
-        text: todo,
-      };
-      setTodos(allTodos);
+      /**
+       * Create New Todo And Replace by Selected
+       */
+      editMyTodo();
     } else {
-      const Todo = {
-        id: uuidv4(),
-        categoriName: currentCategori,
-        subject,
-        text: todo,
-      };
-
-      // Push New Todo Before Another Todos
-      let Todos = [Todo, ...todos];
-      authenticateNewTodos(Todos);
-
-      // Close From Editor After Add
+      /**
+       * Create And Add New Todo
+       */
+      addMyNewTodo();
     }
+
+    // Close From Editor After Add
     setShowEditorContainer(!showEditorContainer);
+
     // Empty Editor Inputs
     setSubject("");
     setTodo("");
   };
 
+  const editMyTodo = () => {
+    const allTodos = [...todos];
+    const todoIndex = allTodos.findIndex((t) => t.id === currentEditingTodoID);
+    allTodos[todoIndex] = {
+      id: currentEditingTodoID,
+      categoriName: currentCategori,
+      subject,
+      text: todo,
+    };
+    setTodos(allTodos);
+  };
+
+  const addMyNewTodo = () => {
+    const Todo = {
+      id: uuidv4(),
+      categoriName: currentCategori,
+      subject,
+      text: todo,
+    };
+    // Push New Todo Before Another Todos
+    let Todos = [Todo, ...todos];
+
+    authenticateNewTodos(Todos);
+  };
+
   const authenticateNewTodos = (Todos) => {
     if (subject !== "" && todo !== "") {
       setTodos(Todos);
+
+      // Alert
       sweetAlert("Success", "Added To TodoList", "success");
 
       // Increase Default Categori Count
@@ -130,19 +85,13 @@ const GlobalState = ({ children }) => {
   };
 
   const increaseCategoriCount = () => {
-    // This All Categories : Array
     const allCategories = [...categories];
-    // Find Target Categori ID
     const CurrentCategoriId = allCategories.findIndex(
       (cc) => (cc.name = currentCategori)
     );
 
     allCategories[CurrentCategoriId].count++;
     setCategories(allCategories);
-  };
-
-  const handleSetShowTodos = () => {
-    setShowTodos(!showTodos);
   };
 
   const handleSetShowCategoriPopUp = () => {
@@ -238,8 +187,6 @@ const GlobalState = ({ children }) => {
         setTodo,
         categories,
         setCategories,
-        showTodos,
-        setShowTodos,
         currentCategori,
         setCurrentCategori,
         showCategoriPopUp,
@@ -259,7 +206,6 @@ const GlobalState = ({ children }) => {
         setCurrentEditingTodoID,
 
         handleNewTodo,
-        handleSetShowTodos,
         handleSetShowCategoriPopUp,
         handleSetShowSearchBar,
         handleSetShowMoreOptions,
