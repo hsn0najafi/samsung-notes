@@ -91,6 +91,9 @@ const GlobalState = ({ children }) => {
 
       // Increase Default Categori Count
       increaseCategoriCount();
+    } else {
+      // Alert
+      sweetAlert("Warning", "Please Write a Name", "warning");
     }
   };
 
