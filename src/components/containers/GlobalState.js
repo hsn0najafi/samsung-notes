@@ -47,6 +47,9 @@ const GlobalState = ({ children }) => {
     setTodo("");
   };
 
+  /**
+   * Make Copy of AllTodos And Create New Todo from New Props Schema And Push To All Todos
+   */
   const editMyTodo = () => {
     const allTodos = [...todos];
     const todoIndex = allTodos.findIndex((t) => t.id === currentEditingTodoID);
@@ -59,6 +62,9 @@ const GlobalState = ({ children }) => {
     setTodos(allTodos);
   };
 
+  /**
+   * Push New Todo To State
+   */
   const addMyNewTodo = () => {
     const Todo = {
       id: uuidv4(),
@@ -72,6 +78,7 @@ const GlobalState = ({ children }) => {
     authenticateNewTodos(Todos);
   };
 
+  // Basic Authentication for Check If Empty Don't Add
   const authenticateNewTodos = (Todos) => {
     if (subject !== "" && todo !== "") {
       setTodos(Todos);
@@ -84,6 +91,9 @@ const GlobalState = ({ children }) => {
     }
   };
 
+  /**
+   * Increase Categori Count When Add New Todo to it
+   */
   const increaseCategoriCount = () => {
     const allCategories = [...categories];
     const CurrentCategoriId = allCategories.findIndex(
@@ -94,34 +104,35 @@ const GlobalState = ({ children }) => {
     setCategories(allCategories);
   };
 
+  /**
+   * Just a Toggler for Reversing a State
+   */
   const handleSetShowCategoriPopUp = () => {
     if (categoriEditMode === false) {
       setShowCategoriPopUp(!showCategoriPopUp);
     }
   };
-
   const handleSetShowSearchBar = () => {
     setShowSearchBar(!showSearchBar);
   };
-
   const handleSetShowMoreOptions = () => {
     setShowMoreOptions(!showMoreOptions);
   };
-
   const handleSetShowEditorContainer = () => {
     setShowEditorContainer(!showEditorContainer);
   };
-
   const handleSetDefaultCategori = (id) => {
     const selectedCategori = [...categories].filter((c) => c.id === id);
     setCurrentCategori(selectedCategori[0].name);
   };
-
   const handleToggleCategoriEditMode = () => {
     setCategoriEditMode(!categoriEditMode);
     setShowCategoriNameInput(!showCategoriNameInput);
   };
 
+  /**
+   * Copy AllTodos and Skip Selected and Push Another
+   */
   const handleDeleteCategori = (id) => {
     const Categories = [...categories];
     const undeletedCategories = Categories.filter((c) => c.id !== id);
@@ -141,6 +152,9 @@ const GlobalState = ({ children }) => {
     setNewCategoriTitle("");
   };
 
+  /**
+   * Create a Object and Push To All Categories
+   */
   const handleAddNewCategori = () => {
     const allCategories = [...categories];
     const newCategori = {
@@ -149,6 +163,9 @@ const GlobalState = ({ children }) => {
       count: 0,
     };
 
+    /**
+     * Ignore Add Empty Categori - Each Categori Shold Have A Name
+     */
     if (newCategoriTitle !== "") {
       allCategories.push(newCategori);
       setCategories(allCategories);
@@ -157,11 +174,15 @@ const GlobalState = ({ children }) => {
     }
   };
 
+  /**
+   * If Application To this Mode User Can be Edit And Delete - And Don't Can Add New Todo - Just  Edit
+   */
   const handleToggleTodosEditMode = () => {
     setTodosEditMode(!todosEditMode);
     setShowMoreOptions(!showMoreOptions);
   };
 
+  // Delete Todo Using Trash Icon
   const handleDeleteTodos = (id) => {
     const undeletedTodos = [...todos].filter((t) => t.id !== id);
     setTodos(undeletedTodos);
