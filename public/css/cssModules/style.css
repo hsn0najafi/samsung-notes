@@ -111,6 +111,7 @@
   transition: 0.5s ease all;
   padding-bottom: 100px;
   height: 70vh;
+  justify-content: flex-start;
 
   z-index: 300;
 
