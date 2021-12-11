@@ -39,6 +39,7 @@ const Context = createContext({
   handleToggleTodosEditMode: () => {},
   handleDeleteTodos: () => {},
   handleEditTodos: () => {},
+  handleSearchTodos: () => {},
 });
 
 export default Context;

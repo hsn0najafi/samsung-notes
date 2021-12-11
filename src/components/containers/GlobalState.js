@@ -14,6 +14,8 @@ const GlobalState = ({ children }) => {
   const [subject, setSubject] = useState("");
   const [categories, setCategories] = useState([
     { id: 0, name: "default", count: 0 },
+    { id: 1, name: "Home", count: 0 },
+    { id: 2, name: "Job", count: 0 },
   ]);
   const [currentCategori, setCurrentCategori] = useState("default");
   const [showCategoriPopUp, setShowCategoriPopUp] = useState(false);
@@ -25,6 +27,7 @@ const GlobalState = ({ children }) => {
   const [showCategoriNameInput, setShowCategoriNameInput] = useState(false);
   const [todosEditMode, setTodosEditMode] = useState(false);
   const [currentEditingTodoID, setCurrentEditingTodoID] = useState();
+  const [searchedText, setSearchedText] = useState("");
 
   const handleNewTodo = () => {
     if (todosEditMode) {
@@ -207,6 +210,10 @@ const GlobalState = ({ children }) => {
     setShowEditorContainer(!showEditorContainer);
   };
 
+  const handleSearchTodos = (e) => {
+    console.log(e.target.value);
+  };
+
   // ----------------------------------------------
 
   return (
@@ -249,6 +256,7 @@ const GlobalState = ({ children }) => {
         handleToggleTodosEditMode,
         handleDeleteTodos,
         handleEditTodos,
+        handleSearchTodos,
       }}
     >
       {children}

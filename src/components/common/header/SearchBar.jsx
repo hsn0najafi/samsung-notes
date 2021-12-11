@@ -13,7 +13,11 @@ const SearchBar = () => {
       />
       <div className="searchBar-input">
         <i className="fa fa-search"></i>
-        <input type="search" placeholder="   جستجو ...   " />
+        <input
+          type="search"
+          placeholder="   جستجو ...   "
+          onChange={(e) => c.handleSearchTodos(e)}
+        />
       </div>
     </form>
   );
