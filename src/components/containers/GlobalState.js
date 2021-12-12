@@ -26,7 +26,7 @@ const GlobalState = ({ children }) => {
   const [newCategoriTitle, setNewCategoriTitle] = useState("");
   const [showCategoriNameInput, setShowCategoriNameInput] = useState(false);
   const [todosEditMode, setTodosEditMode] = useState(false);
-  const [currentEditingTodoID, setCurrentEditingTodoID] = useState();
+  const [currentEditingTodoID, setCurrentEditingTodoID] = useState(null);
   const [searchedText, setSearchedText] = useState("");
 
   const handleNewTodo = () => {
@@ -211,7 +211,14 @@ const GlobalState = ({ children }) => {
   };
 
   const handleSearchTodos = (e) => {
-    console.log(e.target.value);
+    const allTodos = [...todos];
+    const searchStr = e.target.value.toLowerCase();
+
+    const myTodos = allTodos.filter((t) => {
+      return t.text.toString().toLowerCase().indexOf(searchStr) > -1;
+    });
+
+    setTodos(myTodos);
   };
 
   // ----------------------------------------------
