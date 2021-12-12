@@ -5,7 +5,7 @@ import sweetAlert from "sweetalert";
 
 import Context from "../context/Context";
 
-import { data } from "../../data";
+import { categoriNameData, todosData } from "../../data";
 
 const GlobalState = ({ children }) => {
   /**
@@ -15,11 +15,7 @@ const GlobalState = ({ children }) => {
 
   const [todo, setTodo] = useState("");
   const [subject, setSubject] = useState("");
-  const [categories, setCategories] = useState([
-    { id: 0, name: "default", count: 0 },
-    { id: 1, name: "Home", count: 0 },
-    { id: 2, name: "Job", count: 0 },
-  ]);
+  const [categories, setCategories] = useState([]);
   const [currentCategori, setCurrentCategori] = useState("default");
   const [showCategoriPopUp, setShowCategoriPopUp] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -34,7 +30,8 @@ const GlobalState = ({ children }) => {
 
   // Load Data From Json File
   useEffect(() => {
-    setTodos(data);
+    setTodos(todosData);
+    setCategories(categoriNameData);
   }, []);
 
   const handleNewTodo = () => {
