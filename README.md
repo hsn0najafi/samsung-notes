@@ -12,6 +12,6 @@ npm i
 npm start
 ```
 
-![ScreenShot](./screenShot.jpg)
+![ScreenShot](./screenshot.jpg)
 
-![ScreenShot01](./screenShot01.jpg)
+![ScreenShot01](./screenshot01.jpg)
