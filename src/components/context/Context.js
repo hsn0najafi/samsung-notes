@@ -25,6 +25,7 @@ const Context = createContext({
   showCategoriNameInput: Boolean,
   todosEditMode: Boolean,
   setCurrentEditingTodoID: () => {},
+  handleTodosBackUp: () => {},
 
   handleNewTodo: () => {},
   handleSetShowCategoriPopUp: () => {},

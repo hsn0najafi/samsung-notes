@@ -17,6 +17,7 @@ const SearchBar = () => {
           type="search"
           placeholder="   جستجو ...   "
           onChange={(e) => c.handleSearchTodos(e)}
+          onFocus={c.handleTodosBackUp}
         />
       </div>
     </form>

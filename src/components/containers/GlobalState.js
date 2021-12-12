@@ -27,6 +27,7 @@ const GlobalState = ({ children }) => {
   const [showCategoriNameInput, setShowCategoriNameInput] = useState(false);
   const [todosEditMode, setTodosEditMode] = useState(false);
   const [currentEditingTodoID, setCurrentEditingTodoID] = useState(null);
+  const [todosBackUp, setTodosBackUp] = useState([]);
 
   const handleNewTodo = () => {
     if (todosEditMode) {
@@ -209,15 +210,24 @@ const GlobalState = ({ children }) => {
     setShowEditorContainer(!showEditorContainer);
   };
 
+  /**
+   * Match SearchBar Input Value By All Todos Text
+   */
   const handleSearchTodos = (e) => {
-    const allTodos = [...todos];
     const searchStr = e.target.value.toLowerCase();
+    if (searchStr !== "") {
+      const myTodos = [...todos].filter((t) => {
+        return t.text.toLowerCase().indexOf(searchStr) > -1;
+      });
+      setTodos(myTodos);
+    } else {
+      setTodos(todosBackUp);
+    }
+  };
 
-    const myTodos = allTodos.filter((t) => {
-      return t.text.toLowerCase().indexOf(searchStr) > -1;
-    });
-
-    setTodos(myTodos);
+  // Before than 'handleSearchTodos' Set a BackUp From All Todos
+  const handleTodosBackUp = () => {
+    setTodosBackUp(todos);
   };
 
   // ----------------------------------------------
@@ -248,6 +258,7 @@ const GlobalState = ({ children }) => {
         showCategoriNameInput,
         todosEditMode,
         setCurrentEditingTodoID,
+        handleTodosBackUp,
 
         handleNewTodo,
         handleSetShowCategoriPopUp,
