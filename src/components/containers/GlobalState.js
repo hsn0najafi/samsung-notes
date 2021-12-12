@@ -244,6 +244,7 @@ const GlobalState = ({ children }) => {
 
   /**
    * Match SearchBar Input Value By All Todos Text
+   * After Empty SearchBar Restor BackUp
    */
   const handleSearchTodos = (e) => {
     const searchStr = e.target.value.toLowerCase();
