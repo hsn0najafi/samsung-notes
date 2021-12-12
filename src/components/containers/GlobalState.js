@@ -85,7 +85,7 @@ const GlobalState = ({ children }) => {
   /**
    * Make Copy of AllTodos And Create New Todo from New Props Schema And Push To All Todos
    */
-  const editMyTodo = async () => {
+  const editMyTodo = () => {
     const allTodos = [...todos];
     const todoIndex = allTodos.findIndex((t) => t.id === currentEditingTodoID);
     allTodos[todoIndex] = {
@@ -94,10 +94,10 @@ const GlobalState = ({ children }) => {
       subject,
       text: todo,
     };
-    await setTodos(allTodos);
+    setTodos(allTodos);
 
     // Alert
-    await sweetAlert("Success", "Your Todo Edited.", "success");
+    sweetAlert("Success", "Your Todo Edited.", "success");
   };
 
   /**
@@ -225,16 +225,16 @@ const GlobalState = ({ children }) => {
   };
 
   // Delete Todo Using Trash Icon
-  const handleDeleteTodos = async (id) => {
+  const handleDeleteTodos = (id) => {
     const undeletedTodos = [...todos].filter((t) => t.id !== id);
-    await setTodos(undeletedTodos);
+    setTodos(undeletedTodos);
 
     if (todos.length === 1) {
       setTodosEditMode(!todosEditMode);
     }
 
     // Alert
-    await sweetAlert("Success", "Your Todo Deleted.", "success");
+    sweetAlert("Success", "Your Todo Deleted.", "success");
   };
 
   const handleEditTodos = (id) => {

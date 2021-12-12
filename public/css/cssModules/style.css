@@ -316,6 +316,14 @@
   margin-left: auto;
 }
 
+.about-container > * {
+  margin: 20px;
+}
+
+.about-container i {
+  color: #000;
+}
+
 .app-root {
   width: 100vw;
   height: 100vh;
