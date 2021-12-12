@@ -27,7 +27,6 @@ const GlobalState = ({ children }) => {
   const [showCategoriNameInput, setShowCategoriNameInput] = useState(false);
   const [todosEditMode, setTodosEditMode] = useState(false);
   const [currentEditingTodoID, setCurrentEditingTodoID] = useState(null);
-  const [searchedText, setSearchedText] = useState("");
 
   const handleNewTodo = () => {
     if (todosEditMode) {
