@@ -214,7 +214,7 @@ const GlobalState = ({ children }) => {
     const searchStr = e.target.value.toLowerCase();
 
     const myTodos = allTodos.filter((t) => {
-      return t.text.toString().toLowerCase().indexOf(searchStr) > -1;
+      return t.text.toLowerCase().indexOf(searchStr) > -1;
     });
 
     setTodos(myTodos);
