@@ -6,10 +6,10 @@ import App from './components/containers/App'
 import GlobalState from './components/containers/GlobalState'
 
 render(
-    <GlobalState>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </GlobalState>,
-    document.getElementById('root'),
+  <GlobalState>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </GlobalState>,
+  document.getElementById('root'),
 )

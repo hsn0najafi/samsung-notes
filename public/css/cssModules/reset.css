@@ -1,22 +1,22 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Sahel, sans-serif;
-    font-weight: normal;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Sahel, sans-serif;
+  font-weight: normal;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  text-decoration: none;
 
-    scroll-behavior: smooth;
-    transition: 0.25s all ease;
+  scroll-behavior: smooth;
+  transition: 0.25s all ease;
 }
 
 *::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 body {
-    background-color: #efefef;
-    font-size: 16px;
+  background-color: #efefef;
+  font-size: 16px;
 }

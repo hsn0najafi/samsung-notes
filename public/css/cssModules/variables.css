@@ -1,7 +1,7 @@
 :root {
-    --todos-container-width: 100%;
-    --todos-margin: 10px auto;
-    --popUps-right: 0px;
-    --header-height: 50px;
-    --todos-container-height: calc(100% - var(--header-height));
+  --todos-container-width: 100%;
+  --todos-margin: 10px auto;
+  --popUps-right: 0px;
+  --header-height: 50px;
+  --todos-container-height: calc(100% - var(--header-height));
 }
