@@ -1,25 +1,25 @@
 /* Font Awesome */
-@import url("./all.min.css");
+@import url('./all.min.css');
 
 /* Animate.Css */
-@import url("./animate.min.css");
+@import url('./animate.min.css');
 
 /* All Reset Styles */
-@import url("./cssModules/reset.css");
+@import url('./cssModules/reset.css');
 
 /* Fonts Import */
-@import url("./cssModules/fonts.css");
+@import url('./cssModules/fonts.css');
 
 /* Css Variables */
-@import url("./cssModules/variables.css");
+@import url('./cssModules/variables.css');
 
 /* Media Querys */
-@import url("./cssModules/media.css");
+@import url('./cssModules/media.css');
 
 /* Commonly Used Styles */
-@import url("./cssModules/cmmonClasses.css");
+@import url('./cssModules/cmmonClasses.css');
 
 /* Styles */
-@import url("./cssModules/style.css");
+@import url('./cssModules/style.css');
 
 /* Order Is Important :) */

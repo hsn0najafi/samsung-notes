@@ -1,7 +1,7 @@
 const MyFragment = ({ children }) => {
-  return children;
-};
+    return children
+}
 
-export default MyFragment;
+export default MyFragment
 
 // This Such </React.Fragment>

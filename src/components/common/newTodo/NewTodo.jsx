@@ -1,25 +1,25 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext } from 'react'
 
-import Context from "../../context/Context";
+import Context from '../../context/Context'
 
-import Editor from "./Editor";
+import Editor from './Editor'
 
 const NewTodo = () => {
-  const c = useContext(Context);
+    const c = useContext(Context)
 
-  return (
-    <Fragment>
-      {c.showEditorContainer ? (
-        <Editor />
-      ) : (
-        <button
-          className="new-todo-button flex-center-row fa fa-plus animate__animated  animate__backInRight"
-          style={{ right: `${c.showCategoriPopUp ? "-50px" : ""} ` }}
-          onClick={c.handleSetShowEditorContainer}
-        ></button>
-      )}
-    </Fragment>
-  );
-};
+    return (
+        <Fragment>
+            {c.showEditorContainer ? (
+                <Editor />
+            ) : (
+                <button
+                    className="new-todo-button flex-center-row fa fa-plus animate__animated  animate__backInRight"
+                    style={{ right: `${c.showCategoriPopUp ? '-50px' : ''} ` }}
+                    onClick={c.handleSetShowEditorContainer}
+                ></button>
+            )}
+        </Fragment>
+    )
+}
 
-export default NewTodo;
+export default NewTodo
